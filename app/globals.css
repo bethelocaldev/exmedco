@@ -1,0 +1,203 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* FHY Gloexpo Brand Colors */
+  --primary: #E6561A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #0B1929;
+  --secondary-foreground: #FFFFFF;
+  
+  /* Neutral Colors */
+  --background: #FFFFFF;
+  --foreground: #0B1929;
+  --card: #FFFFFF;
+  --card-foreground: #0B1929;
+  --popover: #FFFFFF;
+  --popover-foreground: #0B1929;
+  --muted: #E7EAEF;
+  --muted-foreground: #5A6573;
+  --accent: #E7EAEF;
+  --accent-foreground: #0B1929;
+  --border: #B4B8BD;
+  --input: #E7EAEF;
+  --ring: #E6561A;
+  
+  /* Destructive */
+  --destructive: #dc2626;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Chart colors */
+  --chart-1: #E6561A;
+  --chart-2: #0B1929;
+  --chart-3: #B4B8BD;
+  --chart-4: #E7EAEF;
+  --chart-5: #1e3a5f;
+  
+  --radius: 0.5rem;
+  
+  /* Sidebar */
+  --sidebar: #0B1929;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #E6561A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1e3a5f;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #1e3a5f;
+  --sidebar-ring: #E6561A;
+}
+
+.dark {
+  --background: #0B1929;
+  --foreground: #FFFFFF;
+  --card: #112238;
+  --card-foreground: #FFFFFF;
+  --popover: #112238;
+  --popover-foreground: #FFFFFF;
+  --primary: #E6561A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1e3a5f;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1e3a5f;
+  --muted-foreground: #B4B8BD;
+  --accent: #1e3a5f;
+  --accent-foreground: #FFFFFF;
+  --destructive: #dc2626;
+  --destructive-foreground: #FFFFFF;
+  --border: #1e3a5f;
+  --input: #1e3a5f;
+  --ring: #E6561A;
+  --chart-1: #E6561A;
+  --chart-2: #E7EAEF;
+  --chart-3: #B4B8BD;
+  --chart-4: #1e3a5f;
+  --chart-5: #FFFFFF;
+  --sidebar: #0B1929;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #E6561A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1e3a5f;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #1e3a5f;
+  --sidebar-ring: #E6561A;
+}
+
+@theme inline {
+  --font-sans: 'Poppins', 'Poppins Fallback', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Override container max-width to 7xl (80rem) */
+  .container {
+    max-width: 80rem;
+    margin-inline: auto;
+    width: 100%;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom selection color */
+  ::selection {
+    background-color: #E6561A;
+    color: #FFFFFF;
+  }
+}
+
+/* Heading styles with Playfair Display */
+@layer components {
+  .heading-primary {
+    font-family: var(--font-serif);
+    font-weight: 700;
+  }
+  
+  .heading-secondary {
+    font-family: var(--font-serif);
+    font-weight: 600;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #E6561A 0%, #0B1929 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
