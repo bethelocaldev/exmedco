@@ -61,7 +61,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "bg-secondary text-secondary-foreground pt-10 pb-12",
+        "bg-secondary text-secondary-foreground pt-6 pb-12",
         !title && "pb-6",
         className
       )}

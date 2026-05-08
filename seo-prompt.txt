@@ -1,0 +1,29 @@
+Optimize SEO for the entire Next.js website professionally and production-ready.
+
+Requirements:
+
+Add complete SEO metadata for every page individually
+Add dynamic page titles and descriptions
+Configure Open Graph metadata for WhatsApp, LinkedIn, Facebook, Twitter/X sharing
+Add proper OG images for every major page
+Add Twitter card metadata
+Add canonical URLs
+Generate robots.txt and sitemap.xml
+Implement structured data/schema markup where relevant
+Ensure all images have alt tags
+Optimize heading hierarchy (H1, H2, H3)
+Improve semantic HTML accessibility
+Improve Core Web Vitals and page performance
+Add keyword-focused metadata naturally
+Ensure mobile SEO optimization
+Add favicon and app metadata
+Ensure metadata works correctly with Next.js App Router
+Create reusable SEO utility/helper for scalability
+Make SEO fully production-grade for deployment
+
+Also:
+
+Ensure previews appear correctly when links are shared on WhatsApp and social platforms
+Use clean and modern SEO standards
+Avoid duplicate metadata
+Optimize for Google indexing

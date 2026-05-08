@@ -96,6 +96,12 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <Link
+              href="/sitemap"
+              className="text-muted-foreground hover:text-primary transition-colors text-sm"
+            >
+              Sitemap
+            </Link>
+            <Link
               href="/privacy-policy"
               className="text-muted-foreground hover:text-primary transition-colors text-sm"
             >

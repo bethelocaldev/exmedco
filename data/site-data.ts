@@ -55,6 +55,7 @@ export const navigation = {
     usefulLinks: [
       { name: "About Us", href: "/about" },
       { name: "Services", href: "/services" },
+      { name: "Sitemap", href: "/sitemap" },
       { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Terms and Conditions", href: "/terms-and-conditions" },
       { name: "Contact Us", href: "/contact" },
