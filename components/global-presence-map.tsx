@@ -7,6 +7,18 @@ import { ChevronDown, MapPin, X } from "lucide-react"
 
 const REGIONS = [
   {
+    id: "asia",
+    label: "Asia",
+    countries: [
+      { name: "Philippines", iso: "608", code: "ph" },
+      { name: "Malaysia", iso: "458", code: "my" },
+      { name: "Vietnam", iso: "704", code: "vn" },
+      { name: "Singapore", iso: "702", code: "sg" },
+      { name: "Myanmar", iso: "104", code: "mm" },
+      { name: "India", iso: "356", code: "in" },
+    ],
+  },
+  {
     id: "africa",
     label: "Africa",
     countries: [
@@ -27,18 +39,6 @@ const REGIONS = [
       { name: "Jordan", iso: "400", code: "jo" },
     ],
   },
-  {
-    id: "asia",
-    label: "Asia",
-    countries: [
-      { name: "Philippines", iso: "608", code: "ph" },
-      { name: "Malaysia", iso: "458", code: "my" },
-      { name: "Vietnam", iso: "704", code: "vn" },
-      { name: "Singapore", iso: "702", code: "sg" },
-      { name: "Myanmar", iso: "104", code: "mm" },
-      { name: "India", iso: "356", code: "in" },
-    ],
-  },
 ]
 
 const ISO_TO_REGION: Record<string, string> = {}
@@ -53,8 +53,8 @@ const PROJECTION_CONFIG = { rotate: [-55, -5, 0], scale: 180 }
 
 export default function GlobalPresenceMap() {
   const [hoveredIso, setHoveredIso] = useState<string | null>(null)
-  const [panelOpen, setPanelOpen] = useState(false)
-  const [activeRegion, setActiveRegion] = useState<string | null>(null)
+  const [panelOpen, setPanelOpen] = useState(true)
+  const [activeRegion, setActiveRegion] = useState<string | null>("asia")
 
   const getCountryFill = useCallback(
     (iso: string) => {

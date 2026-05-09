@@ -86,8 +86,8 @@ export default function HomePage() {
               style={{ backgroundImage: `url(${slide.image})` }}
             />
           ))}
-          <div className="absolute inset-0 bg-black/65" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/58 to-black/25" />
+          <div className="absolute inset-0 bg-black/15" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 to-black/5" />
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
 
           <div className="container max-w-7xl mx-auto px-4 relative z-10 py-28">
