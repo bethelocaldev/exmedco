@@ -1,5 +1,6 @@
 import { Header, Footer, PageHero } from "@/components/layout"
 import Accreditation from "@/components/accreditation"
+import Image from "next/image"
 import { Network, Target, Telescope } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -20,17 +21,27 @@ export default function AboutPage() {
           subtitle="Strategic partners in global growth, connecting manufacturers with high-potential markets across Asia, Africa, and the Middle East."
         />
 
-        <section className="py-20 bg-background">
+        <section className="py-14 md:py-20 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid lg:grid-cols-[1fr_0.8fr] gap-12 items-start">
               <div>
+                {/* Logo */}
+                <div className="relative h-10 w-32 mb-4">
+                  <Image
+                    src="/assets/logo.png"
+                    alt="FHY Gloexpo Logo"
+                    fill
+                    className="object-contain object-left"
+                  />
+                </div>
+
                 <p className="text-primary font-medium uppercase tracking-widest text-sm mb-4">
                   About Us
                 </p>
-                <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6">
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4 md:mb-6">
                   Global market access for ambitious manufacturers
                 </h2>
-                <div className="space-y-5 text-muted-foreground text-lg leading-relaxed">
+                <div className="space-y-4 md:space-y-5 text-muted-foreground text-base md:text-lg leading-relaxed">
                   <p>
                     FHY Gloexpo LLP is a global sourcing and distribution company focused on
                     enabling manufacturers to expand across high-growth markets in{" "}
@@ -86,11 +97,11 @@ export default function AboutPage() {
               </div>
 
               <div className="space-y-5">
-                <div className="bg-secondary text-white rounded-xl p-7 border border-secondary">
+                <div className="bg-secondary text-white rounded-xl p-5 md:p-7 border border-secondary">
                   <div className="w-12 h-12 rounded-lg bg-primary/15 flex items-center justify-center text-primary mb-5">
                     <Network className="w-6 h-6" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold mb-3">Our Model</h3>
+                  <h3 className="font-serif text-xl md:text-2xl font-bold mb-3">Our Model</h3>
                   <p className="text-white/70 leading-relaxed">
                     <strong>Local distribution partnerships</strong>,{" "}
                     <strong>multi-channel sales execution</strong>, and{" "}
@@ -98,11 +109,11 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <div className="bg-card border border-border rounded-xl p-7">
+                <div className="bg-card border border-border rounded-xl p-5 md:p-7">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
                     <Target className="w-6 h-6" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
+                  <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-3">
                     Our Mission
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
@@ -112,11 +123,11 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                <div className="bg-card border border-border rounded-xl p-7">
+                <div className="bg-card border border-border rounded-xl p-5 md:p-7">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5">
                     <Telescope className="w-6 h-6" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-foreground mb-3">
+                  <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-3">
                     Our Vision
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">

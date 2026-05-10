@@ -24,8 +24,8 @@ export function BreadcrumbNav() {
   const paths = pathname.split("/").filter(Boolean)
 
   return (
-    <div className="bg-white/90 border-b border-border/50 py-2">
-      <div className="container max-w-7xl mx-auto px-4 flex items-center gap-4">
+    <div className="bg-white/90 border-b border-border/50 py-1.5 sm:py-2">
+      <div className="container max-w-7xl mx-auto px-3 sm:px-4 flex items-center gap-2 sm:gap-4">
         <button
           onClick={() => router.back()}
           className="p-1.5 hover:bg-slate-100 rounded-full transition-colors flex items-center justify-center"
@@ -33,7 +33,7 @@ export function BreadcrumbNav() {
         >
           <ArrowLeft className="w-4 h-4 text-muted-foreground" />
         </button>
-        <nav className="flex items-center text-sm text-muted-foreground space-x-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <nav className="flex items-center text-xs sm:text-sm text-muted-foreground space-x-1 overflow-x-auto whitespace-nowrap scrollbar-hide">
           <Link href="/" className="hover:text-primary transition-colors">
             Home
           </Link>

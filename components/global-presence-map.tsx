@@ -118,6 +118,32 @@ export default function GlobalPresenceMap() {
           ))}
         </div>
 
+        {/* ── Mobile country capsules — after region selector, before map ── */}
+        {currentRegion && (
+          <div className="block lg:hidden mb-5">
+            <p className="text-white/40 text-xs uppercase tracking-widest mb-3">
+              Countries in {currentRegion.label}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {currentRegion.countries.map((country) => (
+                <span
+                  key={country.iso}
+                  className="inline-flex items-center gap-1.5 bg-white/5 border border-white/15 hover:border-primary/50 hover:bg-primary/10 rounded-full px-3 py-1.5 transition-all duration-200"
+                >
+                  <Image
+                    src={`https://flagcdn.com/${country.code}.svg`}
+                    alt={country.name}
+                    width={20}
+                    height={15}
+                    className="h-3.5 w-5 rounded-sm object-cover flex-shrink-0"
+                  />
+                  <span className="text-white text-xs font-medium">{country.name}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div className="relative flex flex-col lg:flex-row gap-6 items-start">
           <div
             className={`
@@ -221,6 +247,7 @@ export default function GlobalPresenceMap() {
 
           <div
             className={`
+              hidden lg:block
               lg:sticky lg:top-24
               w-full overflow-hidden rounded-2xl border border-white/10
               bg-[#111d2c]/90 backdrop-blur-sm
@@ -300,26 +327,26 @@ export default function GlobalPresenceMap() {
           </div>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="mt-10 grid grid-cols-3 gap-3 sm:gap-4">
           {REGIONS.map((region) => (
             <button
               key={region.id}
               onClick={() => openRegionPanel(region.id)}
               className={`
-                rounded-xl border p-5 text-left transition-all duration-200 group cursor-pointer
+                rounded-xl border p-3 sm:p-5 text-left transition-all duration-200 group cursor-pointer
                 ${activeRegion === region.id
                   ? "bg-primary/15 border-primary/60"
                   : "bg-white/5 border-white/10 hover:border-primary/40 hover:bg-primary/10"
                 }
               `}
             >
-              <p className="text-primary text-xs font-semibold uppercase tracking-widest mb-1">
+              <p className="text-primary text-[10px] sm:text-xs font-semibold uppercase tracking-widest mb-1 leading-tight">
                 {region.label}
               </p>
-              <p className="text-white font-serif text-2xl font-bold mb-1">
+              <p className="text-white font-serif text-xl sm:text-2xl font-bold mb-1">
                 {region.countries.length}
               </p>
-              <p className="text-white/50 text-xs">
+              <p className="hidden sm:block text-white/50 text-xs">
                 {region.countries.map((country) => country.name).join(" / ")}
               </p>
             </button>

@@ -6,12 +6,12 @@ import { navigation, contactInfo, siteConfig } from "@/data/site-data"
 export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          {/* Company Info */}
-          <div className="lg:col-span-1">
+      <div className="container mx-auto px-4 py-10 sm:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
+          {/* Company Info — full width on mobile */}
+          <div className="col-span-2 md:col-span-1 lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <div className="relative h-24 w-40">
+              <div className="relative h-16 w-32 sm:h-24 sm:w-40">
                 <Image src="/assets/old-logo.png" alt="FHY Gloexpo Logo" fill className="object-contain" />
               </div>
             </Link>
@@ -54,8 +54,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
+          {/* Contact Info — full width on mobile */}
+          <div className="col-span-2 md:col-span-1">
             <h3 className="font-serif font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
@@ -90,11 +90,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col gap-4">
           <p className="text-muted-foreground text-sm text-center md:text-left">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
             <Link
               href="/sitemap"
               className="text-muted-foreground hover:text-primary transition-colors text-sm"

@@ -8,7 +8,7 @@ const Accreditation = () => {
     name: string;
     image: string;
   }) => (
-    <div className="w-24 h-24 sm:w-32 sm:h-32 bg-card flex items-center justify-center overflow-hidden">
+    <div className="w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-card flex items-center justify-center overflow-hidden">
       <img
         src={`/accredations/${image}`}
         alt={name}
@@ -121,7 +121,7 @@ const Accreditation = () => {
           </div>
 
           {/* Grid with 3 items per row on phones */}
-          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 sm:gap-8 items-start max-w-7xl m-auto">
+          <div className="grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-6 md:gap-8 items-start max-w-7xl m-auto">
             {accredations.map((cert, index) => (
               <div
                 key={index}
@@ -133,7 +133,7 @@ const Accreditation = () => {
                 <p className="font-medium text-xs sm:text-sm text-foreground">
                   {cert.name}
                 </p>
-                <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">
+                <p className="text-[10px] sm:text-xs text-muted-foreground mt-1 line-clamp-2 sm:line-clamp-none">
                   {cert.fullName}
                 </p>
               </div>

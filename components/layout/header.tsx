@@ -30,12 +30,12 @@ export function Header() {
         <div
           className={cn(
             "flex items-center justify-between transition-all duration-300",
-            isScrolled ? "h-16" : "h-24"
+            isScrolled ? "h-14 md:h-16" : "h-16 md:h-24"
           )}
         >
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-12 w-40">
+            <div className="relative h-9 w-28 md:h-12 md:w-40">
               <Image
                 src="/assets/logo.png"
                 alt="FHY Gloexpo Logo"
@@ -108,7 +108,7 @@ export function Header() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="right" className="w-full xs:w-[300px] sm:w-[360px]">
               <nav className="flex flex-col gap-2 mt-8">
                 {navigation.main.map((item) =>
                   item.children ? (

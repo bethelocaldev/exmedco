@@ -61,14 +61,14 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "bg-secondary text-secondary-foreground pt-6 pb-12",
-        !title && "pb-6",
+        "bg-secondary text-secondary-foreground pt-4 pb-8 md:pt-6 md:pb-12",
+        !title && "pb-4 md:pb-6",
         className
       )}
     >
       <div className="container mx-auto px-4">
         {/* Breadcrumb trail */}
-        <nav className={cn("flex items-center gap-1 text-sm text-white/50 flex-wrap", title && "mb-8")}>
+        <nav className={cn("flex items-center gap-1 text-xs sm:text-sm text-white/50 flex-wrap", title && "mb-5 md:mb-8")}>
           {crumbs.map((crumb, i) => {
             const isLast = i === crumbs.length - 1
             return (
@@ -97,13 +97,13 @@ export function PageHero({
         {title && (
           <>
             {/* Title */}
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight text-balance">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 leading-tight text-balance">
               {renderTitle()}
             </h1>
 
             {/* Subtitle */}
             {subtitle && (
-              <p className="text-white/75 text-lg max-w-2xl leading-relaxed mt-2">
+              <p className="text-white/75 text-base md:text-lg max-w-2xl leading-relaxed mt-2">
                 {subtitle}
               </p>
             )}

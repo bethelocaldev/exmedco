@@ -76,7 +76,7 @@ export default function HomePage() {
     <>
       <Header />
       <main>
-        <section className="relative min-h-[92vh] flex items-center bg-secondary overflow-hidden">
+        <section className="relative min-h-[70vh] md:min-h-[92vh] flex items-center bg-secondary overflow-hidden">
           {heroSlides.map((slide, index) => (
             <div
               key={slide.title}
@@ -90,24 +90,24 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 to-black/5" />
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
 
-          <div className="container max-w-7xl mx-auto px-4 relative z-10 py-28">
+          <div className="container max-w-7xl mx-auto px-4 relative z-10 py-20 md:py-28">
             <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/40 rounded-full px-4 py-1.5 mb-8 backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/40 rounded-full px-3 py-1 sm:px-4 sm:py-1.5 mb-6 sm:mb-8 backdrop-blur-sm">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-primary text-sm font-medium tracking-wide">
                   {heroSlides[activeSlide].eyebrow}
                 </span>
               </div>
 
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6">
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-4 md:mb-6">
                 {heroSlides[activeSlide].title}
               </h1>
 
-              <p className="text-white/78 text-lg md:text-xl leading-relaxed max-w-2xl mb-5">
+              <p className="text-white/78 text-base md:text-lg leading-relaxed max-w-2xl mb-4 md:mb-5">
                 {heroSlides[activeSlide].description}
               </p>
 
-              <p className="text-white text-sm md:text-base font-semibold mb-10">
+              <p className="text-white text-sm font-semibold mb-8 md:mb-10">
                 {heroSlides[activeSlide].service}
               </p>
 
@@ -144,11 +144,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-24 bg-background max-w-7xl m-auto">
+        <section className="py-16 md:py-24 bg-background max-w-7xl m-auto">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
               <div className="relative">
-                <div className="bg-secondary rounded-2xl p-10 relative overflow-hidden">
+                <div className="bg-secondary rounded-2xl p-6 md:p-10 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-48 h-48 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
                   <div className="relative z-10 space-y-6">
                     {[
@@ -178,10 +178,10 @@ export default function HomePage() {
                 <p className="text-primary font-medium uppercase tracking-widest text-sm mb-4">
                   Who We Are
                 </p>
-                <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground leading-tight mb-6">
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4 md:mb-6">
                   Your Trusted Partner in Global Pharma Distribution
                 </h2>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-5">
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-5">
                   FHY Gloexpo is a Mumbai-based pharmaceutical distribution company specializing in
                   building and scaling brands across high-growth markets. With deep expertise in
                   regulatory compliance and multi-channel distribution, we connect manufacturers to
@@ -203,13 +203,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-24 bg-muted/40">
+        <section className="py-16 md:py-24 bg-muted/40">
           <div className="container mx-auto px-4 max-w-7xl m-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 md:mb-16">
               <p className="text-primary font-medium uppercase tracking-widest text-sm mb-3">
                 What We Do
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-5">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-5">
                 Our Core Services
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -218,20 +218,20 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
               {services.map((service) => (
                 <Link
                   key={service.id}
                   href={service.href}
-                  className="group bg-background border border-border hover:border-primary/50 rounded-xl p-7 flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  className="group bg-background border border-border hover:border-primary/50 rounded-xl p-4 sm:p-7 flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
-                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    {serviceIconMap[service.icon] ?? <Store className="w-8 h-8" />}
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3 sm:mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                    <span className="w-5 h-5 sm:w-8 sm:h-8">{serviceIconMap[service.icon] ?? <Store className="w-full h-full" />}</span>
                   </div>
-                  <h3 className="font-serif text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="font-serif text-base sm:text-xl font-bold text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-5">
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-5 line-clamp-3">
                     {service.shortDescription}
                   </p>
                   <div className="flex items-center gap-1.5 text-primary text-sm font-semibold">
@@ -254,15 +254,15 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-24 bg-secondary relative overflow-hidden">
+        <section className="py-16 md:py-24 bg-secondary relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
           <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/10 blur-[100px]" />
           <div className="container mx-auto px-4 relative z-10 max-w-7xl m-auto">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10 md:mb-16">
               <p className="text-primary font-medium uppercase tracking-widest text-sm mb-3">
                 By The Numbers
               </p>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-5">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-5">
                 Global Impact
               </h2>
               <p className="text-white/60 text-lg max-w-2xl mx-auto">
@@ -270,13 +270,13 @@ export default function HomePage() {
                 leadership.
               </p>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="text-center bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-primary/40 transition-all duration-300"
+                  className="text-center bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-8 hover:bg-white/10 hover:border-primary/40 transition-all duration-300"
                 >
-                  <p className="text-5xl md:text-6xl font-bold text-primary font-serif mb-3">
+                  <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary font-serif mb-2 sm:mb-3">
                     {stat.value}
                   </p>
                   <p className="text-white/70 font-medium text-sm uppercase tracking-wide">
@@ -292,15 +292,15 @@ export default function HomePage() {
 
         <GlobalPresenceMap />
 
-        <section className="py-16 bg-background">
+        <section className="py-12 md:py-16 bg-background">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="bg-secondary rounded-xl px-6 py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 overflow-hidden relative">
+            <div className="bg-secondary rounded-xl px-5 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 overflow-hidden relative">
               <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/20 blur-3xl" />
               <div className="relative z-10 max-w-2xl">
                 <p className="text-primary font-medium uppercase tracking-widest text-sm mb-3">
                   Ready to expand?
                 </p>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-white leading-tight">
+                <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
                   Let us open the right markets, channels, and partnerships for your products.
                 </h2>
               </div>

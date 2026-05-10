@@ -16,7 +16,7 @@ export default function ContactPage() {
       <main>
         <PageHero />
         {/* ─── CUSTOM CONTACT HERO ─── */}
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-secondary pt-14 pb-20">
+        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-secondary pt-10 pb-14 sm:pt-14 sm:pb-20">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -36,11 +36,11 @@ export default function ContactPage() {
               <span className="text-primary text-sm font-medium tracking-wide uppercase">Get In Touch</span>
             </div>
             
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6">
               Contact <span className="text-primary">Us</span>
             </h1>
             
-            <p className="text-white/75 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/75 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
               Ready to expand your market reach across Asia, Africa, and the Middle East? 
               Partner with FHY Gloexpo for reliable global distribution.
             </p>
@@ -48,16 +48,16 @@ export default function ContactPage() {
         </section>
 
         {/* ─── CONTACT DETAILS SECTION ─── */}
-        <section className="py-24 bg-background relative z-20 -mt-10">
+        <section className="py-14 md:py-24 bg-background relative z-20 -mt-10">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid md:grid-cols-3 gap-8">
               
               {/* Address Card */}
-              <div className="bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                   <MapPin className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Headquarters</h3>
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">Headquarters</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   {contactInfo.address.line1}<br />
                   {contactInfo.address.line2}<br />
@@ -76,11 +76,11 @@ export default function ContactPage() {
               </div>
 
               {/* Email Card */}
-              <div className="bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                   <Mail className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Email Us</h3>
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">Email Us</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   For partnership inquiries, product distribution, or general questions, drop us an email.
                 </p>
@@ -99,11 +99,11 @@ export default function ContactPage() {
               </div>
 
               {/* Phone Card */}
-              <div className="bg-card border border-border rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                   <Phone className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-foreground mb-4">Call Us</h3>
+                <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">Call Us</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Speak directly with our team to discuss your global distribution needs.
                 </p>
