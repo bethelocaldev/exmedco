@@ -5,9 +5,42 @@ import { Network, Target, Telescope } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "About FHY Gloexpo | Global Sourcing and Distribution",
+  title: "About FHY Gloexpo | Global Pharmaceutical Distribution & Market Access",
   description:
-    "Learn about FHY Gloexpo LLP, a global sourcing and distribution company supporting manufacturers across Asia, Africa, and the Middle East.",
+    "FHY Gloexpo LLP is a global sourcing and distribution company helping manufacturers expand across high-growth markets in Asia, Africa, and the Middle East through compliant, multi-channel distribution.",
+  keywords: [
+    "about FHY Gloexpo",
+    "pharma distribution company India",
+    "global pharmaceutical market access",
+    "B2B pharma distribution",
+    "pharmaceutical company Mumbai",
+    "FHY Gloexpo LLP",
+    "Asia Africa Middle East pharma",
+  ],
+  alternates: {
+    canonical: "https://www.fhyglobal.com/about",
+  },
+  openGraph: {
+    title: "About FHY Gloexpo | Global Pharmaceutical Distribution & Market Access",
+    description:
+      "FHY Gloexpo LLP — a global sourcing and distribution company enabling manufacturers to expand across high-growth markets in Asia, Africa, and the Middle East.",
+    url: "https://www.fhyglobal.com/about",
+    images: [
+      {
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About FHY Gloexpo — Global Pharmaceutical Distribution",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About FHY Gloexpo | Global Pharmaceutical Distribution & Market Access",
+    description:
+      "FHY Gloexpo LLP — enabling manufacturers to expand across Asia, Africa, and the Middle East.",
+    images: ["/assets/og-image.png"],
+  },
 }
 
 export default function AboutPage() {

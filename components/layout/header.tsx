@@ -128,13 +128,13 @@ export function Header() {
                     </SheetClose>
                   )
                 )}
-                <div className="pt-4 mt-2 border-t border-border">
+                <div className="pt-4 m-4 border-t border-border">
                   <SheetClose asChild>
                     <Button
                       asChild
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full"
                     >
-                      <Link href="/contact" className="flex items-center justify-center gap-2">
+                      <Link href="/contact" className="flex items-center py-6 justify-center gap-2">
                         Partner With Us
                         <ArrowRight className="h-4 w-4" />
                       </Link>

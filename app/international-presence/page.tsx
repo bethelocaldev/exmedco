@@ -5,9 +5,43 @@ import { CheckCircle, ChevronRight, Globe2, Home } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Global Presence | FHY Gloexpo",
+  title: "International Presence | FHY Gloexpo Global Pharmaceutical Network",
   description:
-    "FHY Gloexpo's global footprint across high-growth markets in Asia, Africa, and the Middle East.",
+    "FHY Gloexpo LLP operates across 15+ countries in Asia, Africa, and the Middle East — including Philippines, Malaysia, Vietnam, Kenya, Nigeria, UAE, and Iraq — providing pharmaceutical distribution and market access.",
+  keywords: [
+    "FHY Gloexpo international presence",
+    "pharma distribution Asia",
+    "pharmaceutical distribution Africa",
+    "pharma distribution Middle East",
+    "pharmaceutical market access Philippines",
+    "drug distribution Malaysia Vietnam",
+    "pharma distribution Kenya Nigeria",
+    "pharmaceutical distribution UAE Iraq",
+    "global pharma network",
+  ],
+  alternates: {
+    canonical: "https://www.fhyglobal.com/international-presence",
+  },
+  openGraph: {
+    title: "International Presence | FHY Gloexpo Global Pharmaceutical Network",
+    description:
+      "FHY Gloexpo LLP — operating across 15+ countries in Asia, Africa, and the Middle East with compliant pharmaceutical distribution.",
+    url: "https://www.fhyglobal.com/international-presence",
+    images: [
+      {
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "FHY Gloexpo International Presence — Global Pharmaceutical Network",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "International Presence | FHY Gloexpo",
+    description: "FHY Gloexpo operates pharmaceutical distribution across 15+ countries in Asia, Africa & Middle East.",
+    images: ["/assets/og-image.png"],
+  },
 }
 
 const highlights = [

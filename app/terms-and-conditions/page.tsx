@@ -3,8 +3,10 @@ import { Header, Footer, PageHero } from "@/components/layout"
 import { siteConfig } from "@/data/site-data"
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions",
+  title: "Terms and Conditions | FHY Gloexpo",
   description: `Terms and Conditions for ${siteConfig.name}. Read our terms of service and usage policies.`,
+  alternates: { canonical: "https://www.fhyglobal.com/terms-and-conditions" },
+  robots: { index: false, follow: true },
 }
 
 export default function TermsPage() {

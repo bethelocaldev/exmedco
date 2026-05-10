@@ -3,8 +3,10 @@ import { Header, Footer, PageHero } from "@/components/layout"
 import { siteConfig } from "@/data/site-data"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | FHY Gloexpo",
   description: `Privacy Policy for ${siteConfig.name}. Learn how we collect, use, and protect your personal information.`,
+  alternates: { canonical: "https://www.fhyglobal.com/privacy-policy" },
+  robots: { index: false, follow: true },
 }
 
 export default function PrivacyPolicyPage() {

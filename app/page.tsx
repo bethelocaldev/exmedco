@@ -17,6 +17,34 @@ import Accreditation from "@/components/accreditation"
 import GlobalPresenceMap from "@/components/global-presence-map"
 import { services } from "@/data/site-data"
 
+/* ── JSON-LD: WebSite + WebPage schema injected at client side ── */
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.fhyglobal.com/#website",
+      url: "https://www.fhyglobal.com",
+      name: "FHY Gloexpo",
+      description: "Pharmaceutical distribution across Asia, Africa & Middle East",
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://www.fhyglobal.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.fhyglobal.com/#webpage",
+      url: "https://www.fhyglobal.com",
+      name: "FHY Gloexpo | Pharmaceutical Distribution Across Asia, Africa & Middle East",
+      description:
+        "FHY Gloexpo LLP — retail, prescription, dispensing, and logistics solutions across 15+ countries in Asia, Africa, and the Middle East.",
+      isPartOf: { "@id": "https://www.fhyglobal.com/#website" },
+    },
+  ],
+}
+
 const serviceIconMap: Record<string, ReactNode> = {
   Store: <Store className="w-8 h-8" />,
   Pill: <Pill className="w-8 h-8" />,
@@ -74,6 +102,10 @@ export default function HomePage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       <Header />
       <main>
         <section className="relative min-h-[70vh] md:min-h-[92vh] flex items-center bg-secondary overflow-hidden">

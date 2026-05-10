@@ -7,6 +7,8 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Sitemap | FHY Gloexpo",
   description: "Browse all FHY Gloexpo pages and navigate to key company sections.",
+  alternates: { canonical: "https://www.fhyglobal.com/sitemap" },
+  robots: { index: false, follow: true },
 }
 
 const additionalPages = [

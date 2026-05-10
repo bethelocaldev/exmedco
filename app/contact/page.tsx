@@ -5,8 +5,40 @@ import Image from "next/image"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact Us | FHY Gloexpo",
-  description: "Get in touch with FHY Gloexpo to discuss partnership and distribution opportunities across APAC.",
+  title: "Contact Us | Partner with FHY Gloexpo for Pharmaceutical Distribution",
+  description:
+    "Get in touch with FHY Gloexpo LLP to discuss partnership and distribution opportunities across Asia, Africa, and the Middle East. Headquartered in Mumbai, India.",
+  keywords: [
+    "contact FHY Gloexpo",
+    "pharma distribution partnership",
+    "pharmaceutical distributor contact",
+    "FHY Gloexpo Mumbai",
+    "distribution partner APAC",
+    "pharmaceutical market access contact",
+  ],
+  alternates: {
+    canonical: "https://www.fhyglobal.com/contact",
+  },
+  openGraph: {
+    title: "Contact Us | Partner with FHY Gloexpo",
+    description:
+      "Ready to expand across Asia, Africa, and the Middle East? Contact FHY Gloexpo LLP to discuss pharmaceutical distribution partnerships.",
+    url: "https://www.fhyglobal.com/contact",
+    images: [
+      {
+        url: "/assets/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact FHY Gloexpo — Pharmaceutical Distribution Partner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact FHY Gloexpo | Pharmaceutical Distribution Partner",
+    description: "Contact FHY Gloexpo to partner for pharma distribution across Asia, Africa & Middle East.",
+    images: ["/assets/og-image.png"],
+  },
 }
 
 export default function ContactPage() {
