@@ -1,4 +1,5 @@
 import { Header, Footer, PageHero } from "@/components/layout"
+import { ContactForm } from "@/components/contact-form"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, Stethoscope, Building2, Users, UserCheck, Briefcase } from "lucide-react"
@@ -46,13 +47,13 @@ export default function PrescriptionChannelPage() {
       <Header />
       <main>
         <PageHero
-          title="Prescription Channel"
-          highlightedWord="Channel"
-          subtitle="Reach healthcare professionals and institutional buyers through structured prescription channels supported by in-market expertise."
+          // title="Prescription Channel"
+          // highlightedWord="Channel"
+          // subtitle="Reach healthcare professionals and institutional buyers through structured prescription channels supported by in-market expertise."
         />
 
         {/* Intro */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-background max-w-7xl mx-auto">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -88,7 +89,7 @@ export default function PrescriptionChannelPage() {
         </section>
 
         {/* Coverage */}
-        <section className="py-20 bg-muted/30 border-y border-border">
+        <section className="py-20 bg-muted/30 border-y border-border max-w-7xl mx-auto">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-3">What We Cover</p>
@@ -112,7 +113,7 @@ export default function PrescriptionChannelPage() {
         </section>
 
         {/* Outcomes */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-background max-w-7xl mx-auto">
           <div className="container mx-auto px-4 max-w-3xl mx-auto">
             <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-3">Why Partner With Us</p>
             <h3 className="font-serif text-2xl md:text-3xl font-bold text-foreground mb-8">A Structured, Compliant Prescription Network</h3>
@@ -126,24 +127,7 @@ export default function PrescriptionChannelPage() {
             </div>
           </div>
         </section>
-
-        {/* CTA */}
-        <section className="py-20 bg-secondary text-secondary-foreground">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Connect With Healthcare Professionals</h2>
-            <p className="text-secondary-foreground/70 text-lg max-w-xl mx-auto mb-8">
-              Partner with FHY Gloexpo to access structured prescription channels across Asia, Africa, and the Middle East.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="inline-flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-full transition-all duration-200">
-                Partner With Us <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/services" className="inline-flex items-center justify-center gap-2 border border-secondary-foreground/30 text-secondary-foreground hover:bg-secondary-foreground/10 font-medium px-8 py-4 rounded-full transition-all duration-200">
-                All Services
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ContactForm compact />
       </main>
       <Footer />
     </>

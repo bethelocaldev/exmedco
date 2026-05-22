@@ -13,6 +13,7 @@ import {
   Truck,
 } from "lucide-react"
 import { Header, Footer } from "@/components/layout"
+import { ContactForm } from "@/components/contact-form"
 import Accreditation from "@/components/accreditation"
 import GlobalPresenceMap from "@/components/global-presence-map"
 import { services } from "@/data/site-data"
@@ -346,6 +347,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <ContactForm compact />
       </main>
       <Footer />
     </>

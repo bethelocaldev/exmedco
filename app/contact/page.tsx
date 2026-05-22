@@ -1,4 +1,5 @@
 import { Header, Footer, PageHero } from "@/components/layout"
+import { ContactForm } from "@/components/contact-form"
 import { contactInfo } from "@/data/site-data"
 import { Mail, MapPin, Phone, ArrowRight, Clock } from "lucide-react"
 import Image from "next/image"
@@ -116,17 +117,31 @@ export default function ContactPage() {
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   For partnership inquiries, product distribution, or general questions, drop us an email.
                 </p>
+                <div className="space-y-3 mb-6">
+                  <div>
+                    <span className="text-xs text-muted-foreground block uppercase font-semibold tracking-wider">General Support</span>
+                    <a 
+                      href={`mailto:${contactInfo.email}`}
+                      className="text-base font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      {contactInfo.email}
+                    </a>
+                  </div>
+                  <div>
+                    <span className="text-xs text-muted-foreground block uppercase font-semibold tracking-wider">Director Desk</span>
+                    <a 
+                      href={`mailto:${contactInfo.directorEmail}`}
+                      className="text-base font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      {contactInfo.directorEmail}
+                    </a>
+                  </div>
+                </div>
                 <a 
-                  href={`mailto:${contactInfo.email}`}
-                  className="text-lg font-medium text-foreground hover:text-primary transition-colors block mb-4"
-                >
-                  {contactInfo.email}
-                </a>
-                <a 
-                  href={`mailto:${contactInfo.email}`}
+                  href="#contact-form"
                   className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:underline mt-auto"
                 >
-                  Send Message <ArrowRight className="w-4 h-4" />
+                  Fill Contact Form <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
 
@@ -154,6 +169,12 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        {/* ─── CONTACT FORM ─── */}
+        <ContactForm
+          heading="Send Us a Message"
+          subheading="Fill in the form below and our team will get back to you within 24 hours."
+        />
       </main>
       <Footer />
     </>

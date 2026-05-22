@@ -60,7 +60,8 @@ export default function TermsPage() {
               <h2>Contact Us</h2>
               <p>
                 If you have questions about these Terms, please contact us at:{" "}
-                <a href="mailto:info@fhyglobal.com">info@fhyglobal.com</a>
+                <a href="mailto:info@fhyglobal.com">info@fhyglobal.com</a> or{" "}
+                <a href="mailto:director@fhyglobal.com">director@fhyglobal.com</a>
               </p>
             </div>
           </div>

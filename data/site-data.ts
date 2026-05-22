@@ -23,6 +23,7 @@ export const contactInfo = {
   },
   phone: "+91 771 897 2454",
   email: "info@fhyglobal.com",
+  directorEmail: "director@fhyglobal.com",
 }
 
 export const companyInfo = {

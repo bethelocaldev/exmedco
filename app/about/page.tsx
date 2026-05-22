@@ -1,4 +1,5 @@
 import { Header, Footer, PageHero } from "@/components/layout"
+import { ContactForm } from "@/components/contact-form"
 import Accreditation from "@/components/accreditation"
 import Image from "next/image"
 import { Network, Target, Telescope } from "lucide-react"
@@ -177,6 +178,7 @@ export default function AboutPage() {
         </section>
 
         <Accreditation />
+        <ContactForm compact />
       </main>
       <Footer />
     </>

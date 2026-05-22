@@ -1,4 +1,5 @@
 import { Header, Footer, PageHero } from "@/components/layout"
+import { ContactForm } from "@/components/contact-form"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight, ShoppingBag, Pill, Stethoscope, Truck, CheckCircle2 } from "lucide-react"
@@ -126,13 +127,13 @@ export default function ServicesPage() {
       <Header />
       <main>
         <PageHero
-          title="Our Services"
-          highlightedWord="Services"
-          subtitle="Comprehensive pharma distribution, retail, dispensing, and logistics solutions across 30+ markets."
+          // title="Our Services"
+          // highlightedWord="Services"
+          // subtitle="Comprehensive pharma distribution, retail, dispensing, and logistics solutions across 30+ markets."
         />
 
         {/* Intro Section */}
-        <section className="py-16 bg-background border-b border-border">
+        <section className="py-16 bg-background border-b border-border max-w-7xl mx-auto">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
@@ -149,7 +150,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-background max-w-7xl mx-auto">
           <div className="container mx-auto px-4">
             <div className="flex flex-col gap-8">
               {services.map((service, index) => {
@@ -228,25 +229,7 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
-
-        {/* Bottom CTA */}
-        <section className="py-20 bg-secondary text-secondary-foreground">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
-              Ready to Expand Your Market Reach?
-            </h2>
-            <p className="text-secondary-foreground/70 text-lg max-w-2xl mx-auto mb-8">
-              Partner with FHY Gloexpo to access compliant, scalable distribution across Asia, Africa, and the Middle East.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-primary/30"
-            >
-              Partner With Us
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-        </section>
+        <ContactForm compact />
       </main>
       <Footer />
     </>

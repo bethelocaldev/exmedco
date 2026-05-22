@@ -82,7 +82,22 @@ export function Footer() {
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm"
                 >
                   <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                  {contactInfo.email}
+                  <span>
+                    <span className="text-xs text-muted-foreground/60 block">General Support</span>
+                    {contactInfo.email}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${contactInfo.directorEmail}`}
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm"
+                >
+                  <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                  <span>
+                    <span className="text-xs text-muted-foreground/60 block">Director Desk</span>
+                    {contactInfo.directorEmail}
+                  </span>
                 </a>
               </li>
             </ul>
