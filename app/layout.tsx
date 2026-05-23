@@ -101,9 +101,9 @@ export const metadata: Metadata = {
     shortcut: "/assets/logo.png",
   },
   verification: {
-    // google: "YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE",
-    // bing: "YOUR_BING_WEBMASTER_VERIFICATION_CODE",
-  },
+  google: "54JOI5wXHDvmeTlp8NMFz9_3pQLbWex9EtH-9LCi1OA",
+  // bing: "YOUR_BING_WEBMASTER_VERIFICATION_CODE",
+},
 }
 
 export const viewport: Viewport = {
