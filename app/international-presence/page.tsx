@@ -60,7 +60,7 @@ export default function InternationalPresencePage() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
           <div className="absolute -top-36 right-0 w-[480px] h-[480px] rounded-full bg-primary/20 blur-[120px]" />
 
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-4 relative z-10 max-w-7xl mx-auto">
             {/* <nav className="flex items-center gap-1 text-sm text-white/50 flex-wrap mb-10">
               <span className="flex items-center gap-1">
                 <Home className="h-3.5 w-3.5" />

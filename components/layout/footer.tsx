@@ -105,7 +105,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-col gap-4">
+        <div className="border-t border-white/10 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-row gap-4 justify-between">
           <p className="text-muted-foreground text-sm text-center md:text-left">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
