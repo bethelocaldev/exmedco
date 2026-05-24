@@ -65,8 +65,37 @@ const outcomes = [
 ]
 
 export default function LogisticsSupplyChainPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.fhyglobal.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.fhyglobal.com/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Logistics & Supply Chain",
+        "item": "https://www.fhyglobal.com/services/logistics-supply-chain"
+      }
+    ]
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main>
         <PageHero
