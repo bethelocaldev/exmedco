@@ -14,6 +14,7 @@ import {
   Store,
   Truck,
 } from "lucide-react"
+import Accreditation from "@/components/accreditation"
 import { Header, Footer } from "@/components/layout"
 import { Button } from "@/components/ui/button"
 import { heroSlides, homeStats, services, statistics } from "@/data/site-data"
@@ -226,6 +227,8 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        <Accreditation />
 
         <section className="border-y border-border bg-secondary py-20 sm:py-24">
           <div className="container px-4 sm:px-6 lg:px-8">

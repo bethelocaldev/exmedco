@@ -1,11 +1,213 @@
+import Link from "next/link"
+import {
+  ArrowRight,
+  Clock3,
+  Globe2,
+  Mail,
+  MapPin,
+  Phone,
+  ShieldCheck,
+} from "lucide-react"
 import { Header, Footer } from "@/components/layout"
+import { Button } from "@/components/ui/button"
+import { contactInfo } from "@/data/site-data"
+
+const contactCards = [
+  {
+    label: "Our Headquarters",
+    title: "Mumbai, India",
+    text: contactInfo.address.full,
+    icon: MapPin,
+    href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactInfo.address.full)}`,
+    action: "Open in Maps",
+  },
+  {
+    label: "Email Us",
+    title: "Distribution Enquiries",
+    text: `General: ${contactInfo.email}\nDirector: ${contactInfo.directorEmail}`,
+    icon: Mail,
+    href: `mailto:${contactInfo.email}`,
+    action: "Send Email",
+  },
+  {
+    label: "Call Us",
+    title: contactInfo.phone,
+    text: "Mon-Fri, 9:00 AM - 6:00 PM (IST)",
+    icon: Phone,
+    href: `tel:${contactInfo.phone.replace(/\s/g, "")}`,
+    action: "Call Now",
+  },
+]
+
+const enquiryTypes = [
+  "Retail distribution partnerships",
+  "Dispensing and pharmacy channel access",
+  "Prescription and institutional networks",
+  "Cold chain, warehousing, and last-mile delivery",
+]
 
 export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen py-20 flex items-center justify-center bg-background">
-        <h1 className="text-4xl font-bold font-serif text-foreground">Contact Us page</h1>
+      <main className="bg-background pt-20">
+        <section className="border-b border-border bg-white">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-12 lg:px-8">
+            <div className="lg:col-span-8">
+              <div className="mb-6 h-px w-24 bg-primary" />
+              <p className="eyebrow">Get in Touch</p>
+              <h1 className="mt-5 display-title max-w-4xl">
+                Contact Exmedco
+              </h1>
+              <p className="body-copy mt-6 max-w-3xl">
+                Looking to expand your pharmaceutical brand across Asia, Africa, or the
+                Middle East? Speak to our team about distribution partnerships, market access
+                strategy, and logistics solutions.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button asChild className="h-12 rounded-none bg-foreground px-6 text-white hover:bg-primary">
+                  <Link href={`mailto:${contactInfo.email}`}>
+                    Email Our Team
+                    <ArrowRight className="size-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="h-12 rounded-none border-foreground bg-white px-6 text-foreground hover:bg-secondary">
+                  <Link href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}>Call Headquarters</Link>
+                </Button>
+              </div>
+            </div>
+            <aside className="lg:col-span-4">
+              <div className="border border-border bg-secondary p-6">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                  Response Focus
+                </p>
+                <div className="mt-5 space-y-4">
+                  {enquiryTypes.map((item) => (
+                    <div key={item} className="flex gap-3 text-sm leading-6 text-muted-foreground">
+                      <ShieldCheck className="mt-0.5 size-4 shrink-0 text-accent" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section className="bg-secondary/70 py-18 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-5 lg:grid-cols-3">
+              {contactCards.map((card) => {
+                const Icon = card.icon
+
+                return (
+                  <article key={card.label} className="clinical-card flex flex-col p-6 sm:p-8">
+                    <div className="flex items-start justify-between gap-5">
+                      <div>
+                        <p className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primary">
+                          {card.label}
+                        </p>
+                        <h2 className="mt-4 font-heading text-2xl font-bold text-foreground">
+                          {card.title}
+                        </h2>
+                      </div>
+                      <Icon className="size-7 text-accent" />
+                    </div>
+                    <p className="mt-5 whitespace-pre-line text-sm leading-7 text-muted-foreground">
+                      {card.text}
+                    </p>
+                    <Link
+                      href={card.href}
+                      target={card.href.startsWith("http") ? "_blank" : undefined}
+                      rel={card.href.startsWith("http") ? "noreferrer" : undefined}
+                      className="mt-8 inline-flex items-center gap-2 border-b border-primary pb-1 font-heading text-sm font-bold text-primary transition hover:text-accent"
+                    >
+                      {card.action}
+                      <ArrowRight className="size-4" />
+                    </Link>
+                  </article>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-18 sm:py-24">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+            <div>
+              <p className="eyebrow">Partnership Desk</p>
+              <h2 className="section-title mt-4 max-w-xl">
+                The right conversation for every market entry stage
+              </h2>
+              <p className="body-copy mt-5 max-w-xl">
+                Whether you are validating channel fit, planning a regulatory-led launch, or
+                expanding a portfolio across multiple regions, our team can guide the next step
+                with practical market access context.
+              </p>
+            </div>
+
+            <div className="border border-border">
+              {[
+                ["01", "Market entry and channel assessment"],
+                ["02", "Retail, pharmacy, prescription, and digital distribution planning"],
+                ["03", "Supply chain, warehousing, cold chain, and last-mile coverage"],
+                ["04", "Documentation, compliance expectations, and local operating model"],
+              ].map(([number, text]) => (
+                <div key={number} className="grid grid-cols-[5rem_1fr] border-b border-border last:border-b-0">
+                  <div className="border-r border-border bg-secondary p-5 font-mono text-xl font-semibold text-primary">
+                    {number}
+                  </div>
+                  <div className="p-5 font-heading text-lg font-bold text-foreground">
+                    {text}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-border bg-secondary py-14">
+          <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+            {[
+              [Clock3, "Mon-Fri, 9:00 AM - 6:00 PM IST"],
+              [Globe2, "Asia, Africa & Middle East enquiries"],
+              [ShieldCheck, "Compliance-led market access"],
+            ].map(([Icon, text]) => {
+              const ItemIcon = Icon as typeof Clock3
+              return (
+                <div key={text as string} className="flex items-center gap-3 border border-border bg-white p-4 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                  <ItemIcon className="size-4 shrink-0 text-accent" />
+                  {text as string}
+                </div>
+              )
+            })}
+          </div>
+        </section>
+
+        <section className="bg-foreground py-16 text-white sm:py-20">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
+            <div>
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                Direct Contact
+              </p>
+              <h2 className="mt-4 max-w-3xl font-heading text-3xl font-extrabold tracking-normal sm:text-4xl">
+                Reach the Exmedco team for distribution and market access partnerships.
+              </h2>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Button asChild className="h-12 rounded-none bg-white px-7 text-foreground hover:bg-primary hover:text-white">
+                <Link href={`mailto:${contactInfo.email}`}>
+                  {contactInfo.email}
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="h-12 rounded-none border-white bg-transparent px-7 text-white hover:bg-white hover:text-foreground">
+                <Link href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}>
+                  {contactInfo.phone}
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
