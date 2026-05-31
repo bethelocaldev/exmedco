@@ -76,21 +76,6 @@ export default function ContactPage() {
                 </Button>
               </div>
             </div>
-            <aside className="lg:col-span-4">
-              <div className="border border-border bg-secondary p-6">
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-                  Response Focus
-                </p>
-                <div className="mt-5 space-y-4">
-                  {enquiryTypes.map((item) => (
-                    <div key={item} className="flex gap-3 text-sm leading-6 text-muted-foreground">
-                      <ShieldCheck className="mt-0.5 size-4 shrink-0 text-accent" />
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </aside>
           </div>
         </section>
 
@@ -132,57 +117,6 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="bg-white py-18 sm:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-            <div>
-              <p className="eyebrow">Partnership Desk</p>
-              <h2 className="section-title mt-4 max-w-xl">
-                The right conversation for every market entry stage
-              </h2>
-              <p className="body-copy mt-5 max-w-xl">
-                Whether you are validating channel fit, planning a regulatory-led launch, or
-                expanding a portfolio across multiple regions, our team can guide the next step
-                with practical market access context.
-              </p>
-            </div>
-
-            <div className="border border-border">
-              {[
-                ["01", "Market entry and channel assessment"],
-                ["02", "Retail, pharmacy, prescription, and digital distribution planning"],
-                ["03", "Supply chain, warehousing, cold chain, and last-mile coverage"],
-                ["04", "Documentation, compliance expectations, and local operating model"],
-              ].map(([number, text]) => (
-                <div key={number} className="grid grid-cols-[5rem_1fr] border-b border-border last:border-b-0">
-                  <div className="border-r border-border bg-secondary p-5 font-mono text-xl font-semibold text-primary">
-                    {number}
-                  </div>
-                  <div className="p-5 font-heading text-lg font-bold text-foreground">
-                    {text}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="border-y border-border bg-secondary py-14">
-          <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
-            {[
-              [Clock3, "Mon-Fri, 9:00 AM - 6:00 PM IST"],
-              [Globe2, "Asia, Africa & Middle East enquiries"],
-              [ShieldCheck, "Compliance-led market access"],
-            ].map(([Icon, text]) => {
-              const ItemIcon = Icon as typeof Clock3
-              return (
-                <div key={text as string} className="flex items-center gap-3 border border-border bg-white p-4 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
-                  <ItemIcon className="size-4 shrink-0 text-accent" />
-                  {text as string}
-                </div>
-              )
-            })}
-          </div>
-        </section>
 
         <section className="bg-foreground py-16 text-white sm:py-20">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">

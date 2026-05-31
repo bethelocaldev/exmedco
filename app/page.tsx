@@ -50,7 +50,7 @@ export default function HomePage() {
     <>
       <Header />
       <main className="bg-background pt-20">
-        <section className="border-b border-border">
+        <section className="border-b border-border max-w-7xl mx-auto">
           <div className="container grid min-h-[calc(100vh-5rem)] grid-cols-1 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
             <div className="flex flex-col justify-center py-14 lg:col-span-6 lg:py-20 lg:pr-12">
               <div className="mb-6 h-px w-24 bg-primary" />
@@ -124,31 +124,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-white">
-          <div className="container px-4 sm:px-6 lg:px-8">
-            <div className="grid border-x border-border sm:grid-cols-2 lg:grid-cols-4">
-              {homeStats.map((stat, index) => (
-                <div key={stat.label} className="border-b border-border p-6 sm:p-8 lg:border-b-0 lg:border-r last:lg:border-r-0">
-                  <p className="font-mono text-4xl font-semibold tracking-tight text-foreground lg:text-5xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-3 text-sm font-medium text-muted-foreground">
-                    {stat.label}
-                  </p>
-                  {index === 3 && (
-                    <p className="mt-3 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-accent">
-                      <ShieldCheck className="size-4" />
-                      Compliance led
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+  
 
         <section className="border-y border-border bg-secondary/70 py-20 sm:py-24">
-          <div className="container grid gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <div className="container grid gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8 max-w-7xl mx-auto">
             <div className="lg:col-span-7">
               <p className="eyebrow">Who We Are</p>
               <h2 className="section-title mt-4 max-w-3xl">
@@ -179,7 +158,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-white py-20 sm:py-24">
+        <section className="bg-white py-20 sm:py-24 max-w-7xl mx-auto">
           <div className="container px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
@@ -231,7 +210,7 @@ export default function HomePage() {
         <Accreditation />
 
         <section className="border-y border-border bg-secondary py-20 sm:py-24">
-          <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="border-t-2 border-primary pt-8">
               <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
                 <div>
@@ -262,7 +241,7 @@ export default function HomePage() {
         </section>
 
         <section className="bg-white py-20 sm:py-24">
-          <div className="container px-4 text-center sm:px-6 lg:px-8">
+          <div className="container px-4 text-center sm:px-6 lg:px-8 max-w-7xl mx-auto">
             <div className="mx-auto max-w-3xl">
               <p className="eyebrow justify-center text-center">Ready to Expand?</p>
               <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-normal text-foreground sm:text-5xl">

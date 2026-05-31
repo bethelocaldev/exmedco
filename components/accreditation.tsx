@@ -107,7 +107,7 @@ export default function Accreditation() {
                 <img
                   src={`/accredations/${cert.image}`}
                   alt={cert.name}
-                  className="max-h-16 max-w-full object-contain grayscale transition duration-200 group-hover:grayscale-0"
+                  className="max-h-16 max-w-full object-contain transition duration-200"
                 />
               </div>
               <p className="mt-5 font-heading text-sm font-bold leading-5 text-foreground">
