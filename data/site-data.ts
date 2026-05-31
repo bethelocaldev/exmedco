@@ -203,7 +203,7 @@ export const heroSlides = [
       "Exmedco provides manufacturers with structured, compliant distribution pathways across Asia, Africa, and the Middle East - from market entry through sustained consumer availability.",
     serviceDetail: "Market entry, distribution infrastructure, and brand positioning",
     image:
-      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1800&q=80",
+      "/homepage/image.png",
   },
   {
     eyebrow: "Multi-Channel Sales Infrastructure",
@@ -212,7 +212,7 @@ export const heroSlides = [
       "We give healthcare product manufacturers a single integrated route to market across pharmacy chains, hospitals, modern trade, and digital platforms.",
     serviceDetail: "Retail distribution, prescription channels, and direct-to-consumer reach",
     image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80",
+      "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1800&q=80",
   },
   {
     eyebrow: "Supply Chain & Logistics",
@@ -221,7 +221,7 @@ export const heroSlides = [
       "Our supply chain infrastructure handles warehousing, cold chain management, documentation, and last-mile delivery with visibility at every stage.",
     serviceDetail: "Logistics, cold chain, order management, and last-mile delivery",
     image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80",
+      "https://plus.unsplash.com/premium_photo-1661766456250-bbde7dd079de?auto=format&fit=crop&w=1800&q=80",
   },
 ]
 
