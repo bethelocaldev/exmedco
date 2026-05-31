@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Header, Footer, PageHero } from "@/components/layout"
+import { Header, Footer } from "@/components/layout"
 import { siteConfig } from "@/data/site-data"
 
 export const metadata: Metadata = {
@@ -14,13 +14,10 @@ export default function TermsPage() {
     <>
       <Header />
       <main>
-        <PageHero
-          title="Terms and Conditions"
-          highlightedWord="Conditions"
-          meta="Last updated: May 2026"
-        />
-
         <section className="py-20 bg-background">
+          <h1 className="my-15 display-title max-w-3xl mx-auto">
+            Terms and Conditions
+          </h1>
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-serif prose-headings:text-secondary prose-p:text-muted-foreground prose-a:text-primary">
               <h2>Agreement to Terms</h2>

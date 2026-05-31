@@ -2,19 +2,20 @@
 
 import * as React from "react"
 import Link from "next/link"
-import Image from "next/image"
-import { Menu, ChevronDown, ArrowRight } from "lucide-react"
+import { ArrowRight, ChevronDown, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
-import { cn } from "@/lib/utils"
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { navigation } from "@/data/site-data"
+import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 
   React.useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10)
+    const handleScroll = () => setIsScrolled(window.scrollY > 8)
+    handleScroll()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -22,53 +23,48 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white",
-        isScrolled ? "shadow-sm border-b border-border" : ""
+        "fixed inset-x-0 top-0 z-50 border-b transition-all duration-300",
+        isScrolled
+          ? "border-border bg-white/95 shadow-[0_10px_35px_rgba(10,22,40,0.08)] backdrop-blur-xl"
+          : "border-transparent bg-white/88 backdrop-blur-md"
       )}
     >
-      <div className="container mx-auto px-4">
-        <div
-          className={cn(
-            "flex items-center justify-between transition-all duration-300",
-            isScrolled ? "h-14 md:h-16" : "h-16 md:h-24"
-          )}
-        >
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <div className="relative h-9 w-28 md:h-12 md:w-40">
-              <Image
-                src="/assets/logo.png"
-                alt="FHY Gloexpo Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className={cn("flex items-center justify-between transition-all", isScrolled ? "h-16" : "h-20")}>
+          <Link href="/" className="flex items-center gap-3" aria-label="Exmedco home">
+            {/* <span className="grid size-10 place-items-center border border-primary/25 bg-primary text-sm font-bold text-white">
+              EX
+            </span> */}
+             <Image
+          src="/assets/logo.jpeg"
+          alt="Exmedco logo"
+          width={65}
+          height={65}
+          className=""  
+          />
           </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center">
+         
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
             {navigation.main.map((item) =>
               item.children ? (
-                /* Hover Dropdown for items with children */
-                <div key={item.name} className="relative group">
-                  <button className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-slate-800 rounded-md hover:bg-slate-50 hover:text-primary transition-colors">
+                <div key={item.name} className="group relative">
+                  <Link
+                    href={item.href}
+                    className="flex items-center gap-1 px-3 py-2 font-heading text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+                  >
                     {item.name}
-                    <ChevronDown className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
-                  </button>
-
-                  {/* Dropdown panel — shown on group hover */}
-                  <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50 min-w-[220px]">
-                    <div className="bg-white rounded-lg shadow-xl border border-slate-100 overflow-hidden">
-                      {item.children.map((child, idx) => (
+                    <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+                  </Link>
+                  <div className="invisible absolute left-0 top-full z-50 min-w-[280px] pt-3 opacity-0 transition duration-150 group-hover:visible group-hover:opacity-100">
+                    <div className="border border-border bg-white p-2 shadow-[0_24px_60px_rgba(10,22,40,0.12)]">
+                      {item.children.map((child) => (
                         <Link
                           key={child.name}
                           href={child.href}
-                          className={cn(
-                            "flex items-center px-4 py-3 text-sm font-medium text-slate-800 hover:bg-primary/5 hover:text-primary transition-colors",
-                            idx !== item.children!.length - 1 && "border-b border-slate-100"
-                          )}
+                          className="group/link flex items-center justify-between gap-4 px-3 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                         >
                           {child.name}
+                          <ArrowRight className="size-3.5 text-primary opacity-0 transition group-hover/link:opacity-100" />
                         </Link>
                       ))}
                     </div>
@@ -78,7 +74,7 @@ export function Header() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-slate-800 rounded-md hover:bg-slate-50 hover:text-primary transition-colors"
+                  className="px-3 py-2 font-heading text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
                 >
                   {item.name}
                 </Link>
@@ -86,61 +82,59 @@ export function Header() {
             )}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center">
-            <Button
-              asChild
-              className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full pl-6 pr-2 h-11"
+          <div className="hidden items-center gap-3 lg:flex">
+            <Link
+              href="mailto:info@exmedco.com"
+              className="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-accent transition hover:text-accent/80"
             >
-              <Link href="/contact" className="flex items-center gap-3">
-                <span className="font-medium text-sm">Partner With Us</span>
-                <div className="bg-white/20 rounded-full p-1.5 flex items-center justify-center">
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </div>
+              info@exmedco.com
+            </Link>
+            <Button asChild className="h-11 rounded-none bg-foreground px-5 text-white hover:bg-primary">
+              <Link href="/contact">
+                Partner With Us
+                <ArrowRight className="size-4" />
               </Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Trigger */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" aria-label="Open menu">
-                <Menu className="h-6 w-6" />
+              <Button variant="outline" size="icon" aria-label="Open menu" className="rounded-none border-border bg-white">
+                <Menu className="size-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full xs:w-[300px] sm:w-[360px]">
-              <nav className="flex flex-col gap-2 mt-8">
+            <SheetContent side="right" className="w-full border-l border-border bg-white p-0 sm:w-[390px]">
+              <div className="border-b border-border p-6">
+                <Link href="/" className="flex items-center gap-3" onClick={() => setIsMobileMenuOpen(false)}>
+                  <span className="grid size-10 place-items-center bg-primary text-sm font-bold text-white">
+                    EX
+                  </span>
+                  <span className="font-heading text-xl font-extrabold text-foreground">Exmedco</span>
+                </Link>
+              </div>
+              <nav className="flex flex-col gap-1 p-4">
                 {navigation.main.map((item) =>
                   item.children ? (
-                    <MobileDropdown
-                      key={item.name}
-                      item={item}
-                      onClose={() => setIsMobileMenuOpen(false)}
-                    />
+                    <MobileDropdown key={item.name} item={item} onClose={() => setIsMobileMenuOpen(false)} />
                   ) : (
                     <SheetClose asChild key={item.name}>
                       <Link
                         href={item.href}
-                        className="text-base font-medium py-2.5 px-3 rounded-md hover:bg-slate-50 hover:text-primary transition-colors"
+                        className="px-3 py-3 font-heading text-base font-semibold text-foreground hover:bg-secondary"
                       >
                         {item.name}
                       </Link>
                     </SheetClose>
                   )
                 )}
-                <div className="pt-4 m-4 border-t border-border">
-                  <SheetClose asChild>
-                    <Button
-                      asChild
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-full"
-                    >
-                      <Link href="/contact" className="flex items-center py-6 justify-center gap-2">
-                        Partner With Us
-                        <ArrowRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </SheetClose>
-                </div>
+                <SheetClose asChild>
+                  <Button asChild className="mt-4 h-12 rounded-none bg-foreground text-white hover:bg-primary">
+                    <Link href="/contact">
+                      Partner With Us
+                      <ArrowRight className="size-4" />
+                    </Link>
+                  </Button>
+                </SheetClose>
               </nav>
             </SheetContent>
           </Sheet>
@@ -149,8 +143,6 @@ export function Header() {
     </header>
   )
 }
-
-/* ── Mobile dropdown ───────────────────────────────────────────── */
 
 interface MobileDropdownProps {
   item: {
@@ -168,21 +160,19 @@ function MobileDropdown({ item, onClose }: MobileDropdownProps) {
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full text-base font-medium py-2.5 px-3 rounded-md hover:bg-slate-50 hover:text-primary transition-colors"
+        className="flex w-full items-center justify-between px-3 py-3 font-heading text-base font-semibold text-foreground hover:bg-secondary"
       >
         {item.name}
-        <ChevronDown
-          className={cn("h-4 w-4 transition-transform duration-200", isOpen && "rotate-180")}
-        />
+        <ChevronDown className={cn("size-4 transition-transform", isOpen && "rotate-180")} />
       </button>
       {isOpen && item.children && (
-        <div className="ml-3 mt-1 border-l-2 border-primary/20 pl-3 flex flex-col gap-1">
+        <div className="ml-3 border-l border-primary/40 pl-3">
           {item.children.map((child) => (
             <Link
               key={child.name}
               href={child.href}
               onClick={onClose}
-              className="text-sm text-slate-600 hover:text-primary py-2 transition-colors"
+              className="block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary"
             >
               {child.name}
             </Link>

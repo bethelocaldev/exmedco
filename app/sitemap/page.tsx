@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Header, Footer, PageHero } from "@/components/layout"
+import { Header, Footer } from "@/components/layout"
 import { navigation } from "@/data/site-data"
 import { ArrowRight } from "lucide-react"
 import type { Metadata } from "next"
@@ -22,13 +22,11 @@ export default function SitemapPage() {
     <>
       <Header />
       <main>
-        <PageHero
-          title="Sitemap"
-          highlightedWord="Sitemap"
-          subtitle="Find every page on the FHY Gloexpo website from one place."
-        />
 
         <section className="py-20 bg-background">
+          <h1 className="my-15 display-title max-w-5xl mx-auto">
+              Sitemap
+          </h1>
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-card border border-border rounded-xl p-7">

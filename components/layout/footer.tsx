@@ -1,136 +1,114 @@
 import Link from "next/link"
+import { ArrowRight, Mail, MapPin, Phone } from "lucide-react"
+import { contactInfo, navigation, siteConfig } from "@/data/site-data"
 import Image from "next/image"
-import { MapPin, Phone, Mail } from "lucide-react"
-import { navigation, contactInfo, siteConfig } from "@/data/site-data"
 
 export function Footer() {
   return (
-    <footer className="bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4 py-10 sm:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
-          {/* Company Info — full width on mobile */}
-          <div className="col-span-2 md:col-span-1 lg:col-span-1">
-            <Link href="/" className="inline-block mb-4">
-              <div className="relative h-16 w-32 sm:h-24 sm:w-40">
-                <Image src="/assets/old-logo.png" alt="FHY Gloexpo Logo" fill className="object-contain" />
-              </div>
+    <footer className="border-t border-border bg-white text-foreground">
+      <div className="container px-4 py-14 sm:px-6 sm:py-18 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr_0.75fr_1.15fr]">
+          <div>
+            <Link href="/" className="inline-flex items-center gap-3">
+              <Image
+                       src="/assets/logo.jpeg"
+                       alt="Exmedco logo"
+                       width={65}
+                       height={65}
+                       className="rounded-none"  
+                       />
+              <span>
+                <span className="block font-heading text-2xl font-extrabold leading-none">
+                  Exmedco
+                </span>
+                <span className="mt-2 block font-mono text-[0.65rem] uppercase tracking-[0.18em] text-primary">
+                  Pharmaceutical Export Medical Company
+                </span>
+              </span>
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed mt-4">
+            <p className="mt-6 max-w-sm text-sm leading-7 text-muted-foreground">
               {siteConfig.description}
             </p>
+            <Link
+              href="/contact"
+              className="mt-6 inline-flex items-center gap-2 border-b border-primary pb-1 font-heading text-sm font-bold text-primary transition hover:text-accent"
+            >
+              Start a partnership
+              <ArrowRight className="size-4" />
+            </Link>
           </div>
 
-          {/* Useful Links */}
+          <FooterColumn title="Useful Links" links={navigation.footer.usefulLinks} />
+          <FooterColumn title="Services" links={navigation.footer.services} />
+
           <div>
-            <h3 className="font-serif font-semibold text-lg mb-4">Useful Links</h3>
-            <ul className="space-y-3">
-              {navigation.footer.usefulLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="font-serif font-semibold text-lg mb-4">Services</h3>
-            <ul className="space-y-3">
-              {navigation.footer.services.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info — full width on mobile */}
-          <div className="col-span-2 md:col-span-1">
-            <h3 className="font-serif font-semibold text-lg mb-4">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <address className="text-muted-foreground text-sm not-italic leading-relaxed">
+            <h3 className="font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-foreground">
+              Contact
+            </h3>
+            <div className="mt-5 space-y-5 text-sm text-muted-foreground">
+              <div className="flex gap-3">
+                <MapPin className="mt-1 size-4 shrink-0 text-accent" />
+                <address className="not-italic leading-7">
                   {contactInfo.address.line1},<br />
-                  {contactInfo.address.line2},<br />
-                  {contactInfo.address.line3},<br />
+                  {contactInfo.address.line2}, {contactInfo.address.line3},<br />
                   {contactInfo.address.city}, {contactInfo.address.state} {contactInfo.address.zip}
                 </address>
-              </li>
-              <li>
-                <a
-                  href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
-                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                  {contactInfo.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${contactInfo.email}`}
-                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span>
-                    <span className="text-xs text-muted-foreground/60 block">General Support</span>
-                    {contactInfo.email}
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${contactInfo.directorEmail}`}
-                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm"
-                >
-                  <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                  <span>
-                    <span className="text-xs text-muted-foreground/60 block">Director Desk</span>
-                    {contactInfo.directorEmail}
-                  </span>
-                </a>
-              </li>
-            </ul>
+              </div>
+              <a href={`tel:${contactInfo.phone.replace(/\s/g, "")}`} className="flex items-center gap-3 transition hover:text-primary">
+                <Phone className="size-4 text-accent" />
+                {contactInfo.phone}
+              </a>
+              <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-3 transition hover:text-primary">
+                <Mail className="size-4 text-accent" />
+                {contactInfo.email}
+              </a>
+              <a href={`mailto:${contactInfo.directorEmail}`} className="flex items-center gap-3 transition hover:text-primary">
+                <Mail className="size-4 text-accent" />
+                {contactInfo.directorEmail}
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-8 sm:mt-12 pt-6 sm:pt-8 flex flex-row gap-4 justify-between">
-          <p className="text-muted-foreground text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        <div className="mt-12 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
+            (c) {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
-            <Link
-              href="/sitemap"
-              className="text-muted-foreground hover:text-primary transition-colors text-sm"
-            >
-              Sitemap
-            </Link>
-            <Link
-              href="/privacy-policy"
-              className="text-muted-foreground hover:text-primary transition-colors text-sm"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/terms-and-conditions"
-              className="text-muted-foreground hover:text-primary transition-colors text-sm"
-            >
-              Terms & Conditions
-            </Link>
+          <div className="flex flex-wrap gap-5 text-sm text-muted-foreground">
+            <Link href="/sitemap" className="hover:text-primary">Sitemap</Link>
+            <Link href="/privacy-policy" className="hover:text-primary">Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className="hover:text-primary">Terms & Conditions</Link>
           </div>
         </div>
       </div>
     </footer>
+  )
+}
+
+function FooterColumn({
+  title,
+  links,
+}: {
+  title: string
+  links: { name: string; href: string }[]
+}) {
+  return (
+    <div>
+      <h3 className="font-heading text-sm font-extrabold uppercase tracking-[0.14em] text-foreground">
+        {title}
+      </h3>
+      <ul className="mt-5 space-y-3">
+        {links.map((link) => (
+          <li key={link.name}>
+            <Link
+              href={link.href}
+              className="text-sm text-muted-foreground transition hover:text-primary"
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }

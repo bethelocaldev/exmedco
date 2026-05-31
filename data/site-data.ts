@@ -1,12 +1,11 @@
-// Site-wide data configuration for FHY Gloexpo
-// Centralized contact details, company info, and navigation
+// Site-wide data configuration for Exmedco.
 
 export const siteConfig = {
-  name: "FHY Gloexpo",
-  tagline: "B2C Brand Building, Sales & Distribution — APAC Region",
+  name: "Exmedco",
+  tagline: "Pharmaceutical Distribution & Market Access - Asia, Africa & the Middle East",
   description:
-    "FHY Gloexpo is a leading pharma distribution company providing retail, prescription, dispensing, and logistics solutions across Asia, Africa, and the Middle East.",
-  url: "https://www.fhyglobal.com",
+    "Exmedco is a specialist pharmaceutical distribution partner providing retail, prescription, dispensing, and supply chain solutions across high-growth markets in Asia, Africa, and the Middle East.",
+  url: "https://www.exmedco.com",
   ogImage: "/images/og-image.jpg",
 }
 
@@ -22,12 +21,12 @@ export const contactInfo = {
     full: "Level - 5, Technopolis Knowledge Park, Mahakali Caves Rd, Chakala, Andheri East, Mumbai, Maharashtra 400019",
   },
   phone: "+91 771 897 2454",
-  email: "info@fhyglobal.com",
-  directorEmail: "director@fhyglobal.com",
+  email: "info@exmedco.com",
+  directorEmail: "director@exmedco.com",
 }
 
 export const companyInfo = {
-  entityType: "Brand-First B2C Distributor",
+  entityType: "Specialist B2C Pharmaceutical Distributor",
   headquarters: "Mumbai",
   coreMarkets: ["Asia", "Africa", "Middle East"],
   marketsOperated: "30+",
@@ -38,7 +37,7 @@ export const companyInfo = {
 export const navigation = {
   main: [
     { name: "Home", href: "/" },
-    { name: "About FHY Gloexpo", href: "/about" },
+    { name: "About Exmedco", href: "/about" },
     {
       name: "Our Services",
       href: "/services",
@@ -49,7 +48,7 @@ export const navigation = {
         { name: "Logistics & Supply Chain", href: "/services/logistics-supply-chain" },
       ],
     },
-    { name: "International Presence", href: "/international-presence" },
+    { name: "Global Reach", href: "/international-presence" },
     { name: "Contact Us", href: "/contact" },
   ],
   footer: {
@@ -74,17 +73,18 @@ export const services = [
   {
     id: "retail-distribution",
     title: "Retail Distribution",
-    headline: "Scale Your Brand Through Modern Retail Networks",
+    headline: "Placing Your Products Where Patients and Consumers Shop",
     shortDescription:
-      "Access high-growth retail environments across APAC through modern trade chains, pharmacy retailers, and e-commerce platforms.",
+      "Structured access to modern trade chains, pharmacy retailers, and digital commerce platforms across high-growth markets.",
     description:
-      "We enable pharma and wellness brands to access high-growth retail environments across APAC. Our strong partnerships with modern trade chains, pharmacy retailers, and e-commerce platforms ensure maximum product visibility and consumer reach.",
+      "Exmedco enables pharmaceutical and wellness manufacturers to enter and scale across retail environments that matter. Through established relationships with leading modern trade operators, pharmacy chains, and e-commerce marketplaces, we ensure consistent visibility, compliant shelf placement, and sustained consumer availability.",
     icon: "Store",
+    accent: "#1A56DB",
     features: [
       "Modern Trade (Supermarkets & Hypermarkets)",
       "Pharmacy Chains & Health Retailers",
-      "Specialty Wellness & Beauty Stores",
-      "E-commerce Platforms",
+      "Specialty Wellness & Nutraceutical Stores",
+      "E-commerce & Direct-to-Consumer Platforms",
     ],
     channels: [
       { name: "Modern Trade", description: "Supermarkets, Hypermarkets" },
@@ -102,40 +102,42 @@ export const services = [
   {
     id: "dispensing-network",
     title: "Dispensing Network",
-    headline: "Reliable Access Through Licensed Pharmacy Channels",
+    headline: "Consistent Product Access Through Regulated Pharmacy Environments",
     shortDescription:
-      "Ensure product availability through trusted, regulated pharmacy environments with licensed pharmacies and wellness outlets.",
+      "Guaranteed product availability at licensed pharmacies and regulated wellness outlets, fully compliant with local dispensing frameworks.",
     description:
-      "Our dispensing network ensures your products are available through trusted, regulated pharmacy environments. We work with both chain and independent pharmacies to deliver consistent OTC and wellness product placement.",
+      "Our dispensing network provides manufacturers with structured, compliant product placement across both chain and independent pharmacy formats. Every dispensing point is managed within the applicable regulatory framework.",
     icon: "Pill",
+    accent: "#0F7B55",
     features: [
-      "Licensed Pharmacies",
-      "OTC Product Distribution",
-      "Wellness & Health Stores",
+      "Licensed Chain & Independent Pharmacies",
+      "OTC and Wellness Product Placement",
+      "Regulatory Documentation & Compliance Monitoring",
     ],
     compliance:
       "All dispensing operations strictly follow local regulatory frameworks.",
     stats: {
       label: "Dispensing Points",
       value: "1,000+",
-      subtext: "Coverage across APAC",
+      subtext: "across APAC",
     },
     href: "/services/dispensing-network",
   },
   {
     id: "prescription-channel",
     title: "Prescription Channel",
-    headline: "Reach Healthcare Professionals & Institutional Buyers",
+    headline: "Connecting Pharmaceutical Brands with Clinicians and Institutions",
     shortDescription:
-      "Connect pharmaceutical brands with hospitals, clinics, and medical professionals through structured prescription channels.",
+      "Structured prescription channel access across hospitals, clinics, and specialist networks.",
     description:
-      "We connect pharmaceutical brands with hospitals, clinics, and medical professionals through a structured prescription channel supported by in-market expertise.",
+      "Exmedco provides pharmaceutical manufacturers with a disciplined, end-to-end prescription channel strategy across hospital procurement, GP networks, specialist outreach, and medical representative teams.",
     icon: "Stethoscope",
+    accent: "#1A56DB",
     features: [
-      "Hospital Procurement (Public & Private)",
-      "Clinic & GP Networks",
-      "Specialist Outreach",
-      "Medical Representative Engagement",
+      "Hospital Procurement (Public & Private Sectors)",
+      "GP & Community Clinic Networks",
+      "Specialist Outreach & KOL Engagement",
+      "Medical Representative Deployment",
     ],
     compliance: "100% compliance with local medical and regulatory standards",
     stats: {
@@ -148,23 +150,24 @@ export const services = [
   {
     id: "logistics-supply-chain",
     title: "Logistics & Supply Chain",
-    headline: "Seamless Distribution from Source to Shelf",
+    headline: "Controlled, Compliant Movement from Origin to End Point",
     shortDescription:
-      "Efficient, compliant, and transparent product movement across borders and markets with end-to-end logistics.",
+      "End-to-end pharmaceutical logistics from strategic hub warehousing through last-mile delivery.",
     description:
-      "Our logistics infrastructure ensures efficient, compliant, and transparent product movement across borders and markets.",
+      "Our supply chain infrastructure is purpose-built for regulated pharmaceutical products, with hub warehousing, cold chain requirements, real-time shipment visibility, and last-mile delivery.",
     icon: "Truck",
+    accent: "#3D5166",
     features: [
-      "Central Warehousing (Singapore & Hong Kong hubs)",
-      "Cold Chain Logistics",
+      "Central Hub Warehousing (Singapore & Hong Kong)",
+      "Cold Chain & Temperature-Controlled Logistics",
       "Real-Time Track & Trace",
-      "Order Management System (OMS)",
+      "Integrated Order Management System (OMS)",
       "Last-Mile Delivery Across 12+ Countries",
     ],
     processFlow: [
-      { step: "Inbound", description: "Procurement & Quality Check" },
+      { step: "Inbound", description: "Procurement & Quality Inspection" },
       { step: "Warehousing", description: "Singapore & Hong Kong hubs" },
-      { step: "Outbound", description: "Channel dispatch" },
+      { step: "Outbound", description: "Channel dispatch & documentation" },
       { step: "Last Mile", description: "Retail, Pharmacy, Hospital" },
     ],
     stats: {
@@ -183,6 +186,43 @@ export const statistics = [
   { value: "100%", label: "Regulatory Compliance" },
   { value: "12+", label: "Countries" },
   { value: "3", label: "Regional Hubs" },
+]
+
+export const homeStats = [
+  { value: "25+", label: "Years of Experience" },
+  { value: "15+", label: "Countries Served" },
+  { value: "200+", label: "Product Portfolio" },
+  { value: "99.9%", label: "Quality Compliance" },
+]
+
+export const heroSlides = [
+  {
+    eyebrow: "Pharmaceutical Distribution & Market Access",
+    title: "Building Market Access for Pharmaceutical Manufacturers Worldwide",
+    description:
+      "Exmedco provides manufacturers with structured, compliant distribution pathways across Asia, Africa, and the Middle East - from market entry through sustained consumer availability.",
+    serviceDetail: "Market entry, distribution infrastructure, and brand positioning",
+    image:
+      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1800&q=80",
+  },
+  {
+    eyebrow: "Multi-Channel Sales Infrastructure",
+    title: "Retail, Dispensing, Prescription, and Digital Under One Partnership",
+    description:
+      "We give healthcare product manufacturers a single integrated route to market across pharmacy chains, hospitals, modern trade, and digital platforms.",
+    serviceDetail: "Retail distribution, prescription channels, and direct-to-consumer reach",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80",
+  },
+  {
+    eyebrow: "Supply Chain & Logistics",
+    title: "Controlled Product Movement from Origin to Every End Point",
+    description:
+      "Our supply chain infrastructure handles warehousing, cold chain management, documentation, and last-mile delivery with visibility at every stage.",
+    serviceDetail: "Logistics, cold chain, order management, and last-mile delivery",
+    image:
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80",
+  },
 ]
 
 export const globalPresence = {
@@ -210,19 +250,19 @@ export const globalPresence = {
   marketHighlights: [
     {
       country: "Malaysia",
-      description: "Top 3 national distributors",
+      description: "Among the leading national distribution partners in-country",
     },
     {
       country: "Vietnam",
-      description: "Nationwide retail + prescription reach",
+      description: "Nationwide retail and prescription channel coverage",
     },
     {
       country: "Myanmar",
-      description: "Urban + regional distribution",
+      description: "Urban centre and regional distribution capability",
     },
     {
       country: "Singapore",
-      description: "Retail + dispensing + hospital network (HQ Market)",
+      description: "Full-spectrum retail, dispensing, and hospital network",
     },
   ],
   marketStats: {
@@ -235,16 +275,14 @@ export const globalPresence = {
 
 export const aboutContent = {
   intro:
-    "FHY Gloexpo LLP is a global sourcing and distribution company focused on enabling manufacturers to expand across high-growth markets in Asia, Africa, and the Middle East.",
-  description: `We specialize in building strong market access for international brands through a combination of local distribution partnerships, multi-channel sales strategies, and direct-to-consumer reach. Our approach is designed to bridge the gap between global manufacturers and regional demand by offering end-to-end support—from market entry and partner onboarding to product distribution and brand positioning.
+    "Exmedco is a global pharmaceutical sourcing and distribution company dedicated to helping manufacturers establish sustainable, compliant market access across Asia, Africa, and the Middle East.",
+  description: `We bring together local distribution expertise, multi-channel sales infrastructure, and direct-to-consumer reach to close the gap between international manufacturers and regional demand. Our model extends across the full market entry lifecycle - from initial partner onboarding and regulatory navigation to active product distribution and long-term brand building.
 
-At FHY Gloexpo, we are not just exporters; we are strategic partners in growth. We work closely with manufacturers to establish sustainable distribution ecosystems, ensuring their products reach the right markets, through the right channels, with maximum efficiency.
-
-Our network-driven model allows us to collaborate with distributors, retailers, and digital platforms, enabling both B2B and B2C penetration across diverse markets.`,
+Exmedco operates as a strategic growth partner, not simply a logistics provider. We invest in understanding the commercial dynamics of each market, enabling manufacturers to enter with confidence and scale with precision.`,
   mission:
-    "To simplify global trade and empower manufacturers with seamless access to emerging markets through efficient distribution and scalable business models.",
+    "To make global pharmaceutical trade straightforward - giving manufacturers reliable, compliant access to emerging markets through efficient distribution and scalable commercial models.",
   vision:
-    "To build a globally recognized distribution and market access platform connecting manufacturers with high-potential regions across Asia, Africa, and the Middle East.",
+    "To be the most trusted pharmaceutical distribution and market access platform connecting manufacturers with high-potential regions across Asia, Africa, and the Middle East.",
 }
 
 export const accreditations = [

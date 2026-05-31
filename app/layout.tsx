@@ -1,54 +1,64 @@
 import type { Metadata, Viewport } from "next"
-import { Playfair_Display, Poppins } from "next/font/google"
+import { Anton, IBM_Plex_Mono, IBM_Plex_Sans, Plus_Jakarta_Sans } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const playfairDisplay = Playfair_Display({
+const anton = Anton({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-anton",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400"],
 })
 
-const poppins = Poppins({
+const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-ibm-plex-sans",
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
 })
 
-const BASE_URL = "https://www.fhyglobal.com"
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-ibm-plex-mono",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+})
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+})
+
+const BASE_URL = "https://www.exmedco.com"
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: "FHY Gloexpo | Pharmaceutical Distribution Across Asia, Africa & Middle East",
-    template: "%s | FHY Gloexpo",
+    default: "Exmedco | Pharmaceutical Distribution & Market Access",
+    template: "%s | Exmedco",
   },
   description:
-    "FHY Gloexpo LLP is a Mumbai-based pharmaceutical distribution company providing retail, prescription, dispensing, and logistics solutions across 15+ countries in Asia, Africa, and the Middle East.",
+    "Exmedco is a specialist pharmaceutical distribution partner providing retail, prescription, dispensing, and supply chain solutions across Asia, Africa, and the Middle East.",
   generator: "Next.js",
-  applicationName: "FHY Gloexpo",
+  applicationName: "Exmedco",
   referrer: "origin-when-cross-origin",
   keywords: [
     "pharmaceutical distribution",
-    "pharma distribution APAC",
-    "FHY Gloexpo",
-    "pharmaceutical logistics Asia",
-    "drug distribution Africa",
-    "medicine distribution Middle East",
-    "market access pharma",
-    "B2C pharmaceutical distribution",
-    "retail pharma distribution",
-    "prescription channel Asia",
-    "dispensing network pharmacy",
-    "pharmaceutical supply chain",
-    "pharma partner Mumbai",
-    "global pharma distribution",
+    "pharma market access APAC",
+    "drug distribution company",
+    "pharma supply chain partner",
+    "market entry pharmaceutical",
+    "OTC distribution network",
+    "hospital pharma procurement",
+    "cold chain pharmaceutical logistics",
+    "regulatory compliance pharma",
+    "B2C pharma distribution",
   ],
-  authors: [{ name: "FHY Gloexpo LLP", url: BASE_URL }],
-  creator: "FHY Gloexpo LLP",
-  publisher: "FHY Gloexpo LLP",
+  authors: [{ name: "Exmedco", url: BASE_URL }],
+  creator: "Exmedco",
+  publisher: "Exmedco",
   formatDetection: {
     email: false,
     address: false,
@@ -61,26 +71,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: BASE_URL,
-    siteName: "FHY Gloexpo",
-    title: "FHY Gloexpo | Pharmaceutical Distribution Across Asia, Africa & Middle East",
+    siteName: "Exmedco",
+    title: "Exmedco | Pharmaceutical Distribution & Market Access",
     description:
-      "FHY Gloexpo LLP is a Mumbai-based pharmaceutical distribution company providing retail, prescription, dispensing, and logistics solutions across 15+ countries in Asia, Africa, and the Middle East.",
+      "End-to-end pharmaceutical distribution across retail, prescription, dispensing, and logistics channels.",
     images: [
       {
         url: "/assets/og-image.png",
         width: 1200,
         height: 630,
-        alt: "FHY Gloexpo — Global Pharmaceutical Distribution",
+        alt: "Exmedco - Global Pharmaceutical Distribution",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FHY Gloexpo | Pharmaceutical Distribution Across Asia, Africa & Middle East",
+    title: "Exmedco | Pharmaceutical Distribution & Market Access",
     description:
-      "FHY Gloexpo LLP: retail, prescription, dispensing, and logistics solutions across 15+ countries in Asia, Africa, and the Middle East.",
+      "Retail, prescription, dispensing, and logistics solutions across Asia, Africa, and the Middle East.",
     images: ["/assets/og-image.png"],
-    creator: "@fhygloexpo",
   },
   robots: {
     index: true,
@@ -101,16 +110,12 @@ export const metadata: Metadata = {
     apple: "/web-app-manifest-192x192.png",
     shortcut: "/favicon.ico",
   },
-  verification: {
-  google: "54JOI5wXHDvmeTlp8NMFz9_3pQLbWex9EtH-9LCi1OA",
-  // bing: "YOUR_BING_WEBMASTER_VERIFICATION_CODE",
-},
 }
 
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#FFFFFF" },
-    { media: "(prefers-color-scheme: dark)", color: "#0B1929" },
+    { media: "(prefers-color-scheme: dark)", color: "#0A1628" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -126,12 +131,11 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "FHY Gloexpo LLP",
-    alternateName: "FHY Gloexpo",
-    url: "https://www.fhyglobal.com",
-    logo: "https://www.fhyglobal.com/assets/logo.png",
+    name: "Exmedco",
+    url: "https://www.exmedco.com",
+    logo: "https://www.exmedco.com/assets/logo.png",
     description:
-      "FHY Gloexpo LLP is a Mumbai-based pharmaceutical distribution company providing retail, prescription, dispensing, and logistics solutions across 15+ countries in Asia, Africa, and the Middle East.",
+      "Exmedco is a Mumbai-based pharmaceutical distribution and market access company serving Asia, Africa, and the Middle East.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Level - 5, Technopolis Knowledge Park, Mahakali Caves Rd, Chakala, Andheri East",
@@ -147,15 +151,14 @@ export default function RootLayout({
       areaServed: ["Asia", "Africa", "Middle East"],
       availableLanguage: ["English"],
     },
-    sameAs: [],
   }
 
   return (
     <html
       lang="en"
-      className={`${playfairDisplay.variable} ${poppins.variable} bg-background`}
+      className={`${anton.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable} ${plusJakarta.variable} bg-background`}
     >
-      <body className="font-sans antialiased pt-24">
+      <body className="font-sans antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

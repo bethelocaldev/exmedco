@@ -1,99 +1,41 @@
 "use client"
 
+import * as React from "react"
 import Link from "next/link"
-import type { ReactNode } from "react"
-import { useEffect, useState } from "react"
 import {
   ArrowRight,
-  CheckCircle,
-  ChevronRight,
+  Building2,
+  CheckCircle2,
+  ClipboardCheck,
+  Globe2,
+  Hospital,
   Pill,
-  Stethoscope,
+  ShieldCheck,
   Store,
   Truck,
 } from "lucide-react"
 import { Header, Footer } from "@/components/layout"
-import { ContactForm } from "@/components/contact-form"
-import Accreditation from "@/components/accreditation"
-import GlobalPresenceMap from "@/components/global-presence-map"
-import { services } from "@/data/site-data"
+import { Button } from "@/components/ui/button"
+import { heroSlides, homeStats, services, statistics } from "@/data/site-data"
 
-/* ── JSON-LD: WebSite + WebPage schema injected at client side ── */
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://www.fhyglobal.com/#website",
-      url: "https://www.fhyglobal.com",
-      name: "FHY Gloexpo",
-      description: "Pharmaceutical distribution across Asia, Africa & Middle East",
-      potentialAction: {
-        "@type": "SearchAction",
-        target: "https://www.fhyglobal.com/?s={search_term_string}",
-        "query-input": "required name=search_term_string",
-      },
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://www.fhyglobal.com/#webpage",
-      url: "https://www.fhyglobal.com",
-      name: "FHY Gloexpo | Pharmaceutical Distribution Across Asia, Africa & Middle East",
-      description:
-        "FHY Gloexpo LLP — retail, prescription, dispensing, and logistics solutions across 15+ countries in Asia, Africa, and the Middle East.",
-      isPartOf: { "@id": "https://www.fhyglobal.com/#website" },
-    },
-  ],
+const serviceIcons = {
+  Store,
+  Pill,
+  Stethoscope: Hospital,
+  Truck,
 }
 
-const serviceIconMap: Record<string, ReactNode> = {
-  Store: <Store className="w-8 h-8" />,
-  Pill: <Pill className="w-8 h-8" />,
-  Stethoscope: <Stethoscope className="w-8 h-8" />,
-  Truck: <Truck className="w-8 h-8" />,
-}
-
-const stats = [
-  { value: "25+", label: "Years of Experience" },
-  { value: "15+", label: "Countries Served" },
-  { value: "200+", label: "Product Portfolio" },
-  { value: "99.9%", label: "Quality Compliance" },
-]
-
-const heroSlides = [
-  {
-    eyebrow: "Global Pharmaceutical Distribution",
-    title: "Expanding Pharma Brands Across APAC & Global Markets",
-    description:
-      "FHY Gloexpo builds reliable market access for manufacturers through compliant distribution, regional partnerships, and scalable sales channels.",
-    service: "Market access, distribution, and brand positioning",
-    image:
-      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1800&q=80",
-  },
-  {
-    eyebrow: "Multi-Channel Sales Network",
-    title: "Retail, Prescription, Dispensing, and Digital Reach",
-    description:
-      "We connect healthcare products with modern retail chains, pharmacies, institutions, and digital platforms across high-growth markets.",
-    service: "Retail distribution, prescription channels, and B2C reach",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80",
-  },
-  {
-    eyebrow: "Logistics & Supply Chain",
-    title: "Reliable Movement From Source to Regional Demand",
-    description:
-      "Our operating model supports manufacturers with partner onboarding, product distribution, supply chain visibility, and efficient regional execution.",
-    service: "Logistics, partner onboarding, and supply chain support",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1800&q=80",
-  },
+const highlights = [
+  ["Headquarters", "Mumbai, India"],
+  ["Core Markets", "Asia / Africa / Middle East"],
+  ["Regulatory Compliance", "100% across all active markets"],
+  ["Distribution Model", "Integrated B2B & B2C multi-channel"],
 ]
 
 export default function HomePage() {
-  const [activeSlide, setActiveSlide] = useState(0)
+  const [activeSlide, setActiveSlide] = React.useState(0)
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = window.setInterval(() => {
       setActiveSlide((current) => (current + 1) % heroSlides.length)
     }, 5500)
@@ -101,75 +43,79 @@ export default function HomePage() {
     return () => window.clearInterval(timer)
   }, [])
 
+  const slide = heroSlides[activeSlide]
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
       <Header />
-      <main>
-        <section className="relative min-h-[70vh] md:min-h-[92vh] flex items-center bg-secondary overflow-hidden">
-          {heroSlides.map((slide, index) => (
-            <div
-              key={slide.title}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-                activeSlide === index ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ backgroundImage: `url(${slide.image})` }}
-            />
-          ))}
-          <div className="absolute inset-0 bg-black/15" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 to-black/5" />
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 to-transparent" />
-
-          <div className="container max-w-7xl mx-auto px-4 relative z-10 py-20 md:py-28">
-            <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/40 rounded-full px-3 py-1 sm:px-4 sm:py-1.5 mb-6 sm:mb-8 backdrop-blur-sm">
-                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-primary text-sm font-medium tracking-wide">
-                  {heroSlides[activeSlide].eyebrow}
-                </span>
-              </div>
-
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-4 md:mb-6">
-                {heroSlides[activeSlide].title}
+      <main className="bg-background pt-20">
+        <section className="border-b border-border">
+          <div className="container grid min-h-[calc(100vh-5rem)] grid-cols-1 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+            <div className="flex flex-col justify-center py-14 lg:col-span-6 lg:py-20 lg:pr-12">
+              <div className="mb-6 h-px w-24 bg-primary" />
+              <p className="eyebrow">{slide.eyebrow}</p>
+              <h1 className="mt-5 display-title max-w-3xl">
+                {slide.title}
               </h1>
-
-              <p className="text-white/78 text-base md:text-lg leading-relaxed max-w-2xl mb-4 md:mb-5">
-                {heroSlides[activeSlide].description}
+              <p className="body-copy mt-6 max-w-2xl">
+                {slide.description}
               </p>
-
-              <p className="text-white text-sm font-semibold mb-8 md:mb-10">
-                {heroSlides[activeSlide].service}
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-[0_0_30px_rgba(230,86,26,0.4)] group"
-                >
-                  Partner With Us
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/70 hover:border-white text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 backdrop-blur-sm"
-                >
-                  Explore Services
-                </Link>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button asChild className="h-12 rounded-none bg-foreground px-6 text-white hover:bg-primary">
+                  <Link href="/contact">
+                    Discuss Market Access
+                    <ArrowRight className="size-4" />
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" className="h-12 rounded-none border-foreground bg-white px-6 text-foreground hover:bg-secondary">
+                  <Link href="/services">View Services</Link>
+                </Button>
               </div>
+              <div className="mt-10 border-l-2 border-accent pl-4">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+                  Active capability
+                </p>
+                <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                  {slide.serviceDetail}
+                </p>
+              </div>
+            </div>
 
-              <div className="flex items-center gap-3 mt-12" aria-label="Hero carousel slides">
-                {heroSlides.map((slide, index) => (
+            <div className="relative min-h-[420px] overflow-hidden border-t border-border lg:col-span-6 lg:border-l lg:border-t-0">
+              {heroSlides.map((item, index) => (
+                <img
+                  key={item.image}
+                  src={item.image}
+                  alt=""
+                  className={`absolute inset-0 size-full object-cover transition-opacity duration-700 ${
+                    index === activeSlide ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+              <div className="absolute inset-0 bg-[#0A1628]/38" />
+              {/* <div className="absolute inset-x-6 bottom-6 border border-white/25 bg-white/92 p-5 backdrop-blur-sm sm:inset-x-8 sm:bottom-8">
+                <div className="grid grid-cols-3 gap-4">
+                  {["Retail", "Pharmacy", "Logistics"].map((item) => (
+                    <div key={item}>
+                      <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-primary">
+                        {item}
+                      </p>
+                      <div className="mt-3 h-1 bg-secondary">
+                        <div className="h-full w-2/3 bg-accent" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div> */}
+              <div className="absolute right-6 top-6 flex gap-2">
+                {heroSlides.map((item, index) => (
                   <button
-                    key={slide.title}
+                    key={item.title}
+                    aria-label={`Show hero slide ${index + 1}`}
                     onClick={() => setActiveSlide(index)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      activeSlide === index ? "w-10 bg-primary" : "w-2 bg-white/55 hover:bg-white"
+                    className={`h-2.5 w-8 border border-white transition ${
+                      index === activeSlide ? "bg-white" : "bg-white/20"
                     }`}
-                    aria-label={`Show slide ${index + 1}`}
-                    aria-current={activeSlide === index}
                   />
                 ))}
               </div>
@@ -177,177 +123,182 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 bg-background max-w-7xl m-auto">
-          <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="relative">
-                <div className="bg-secondary rounded-2xl p-6 md:p-10 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-                  <div className="relative z-10 space-y-6">
-                    {[
-                      { label: "Headquarters", value: "Mumbai, India" },
-                      { label: "Core Markets", value: "Asia / Africa / Middle East" },
-                      { label: "Regulatory Compliance", value: "100% in all markets" },
-                      { label: "Distribution Model", value: "B2B & B2C Multi-channel" },
-                    ].map((item) => (
-                      <div
-                        key={item.label}
-                        className="flex items-start gap-4 border-b border-white/10 pb-5 last:border-0 last:pb-0"
-                      >
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-white/50 text-xs uppercase tracking-widest mb-0.5">
-                            {item.label}
-                          </p>
-                          <p className="text-white font-semibold">{item.value}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <p className="text-primary font-medium uppercase tracking-widest text-sm mb-4">
-                  Who We Are
-                </p>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4 md:mb-6">
-                  Your Trusted Partner in Global Pharma Distribution
-                </h2>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed mb-5">
-                  FHY Gloexpo is a Mumbai-based pharmaceutical distribution company specializing in
-                  building and scaling brands across high-growth markets. With deep expertise in
-                  regulatory compliance and multi-channel distribution, we connect manufacturers to
-                  consumers through structured, reliable, and compliant networks.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  Our operations span across Asia, Africa, and the Middle East, delivering
-                  consistent quality, strong market access, and long-term growth.
-                </p>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/90 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 group"
-                >
-                  About Us
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16 md:py-24 bg-muted/40">
-          <div className="container mx-auto px-4 max-w-7xl m-auto">
-            <div className="text-center mb-10 md:mb-16">
-              <p className="text-primary font-medium uppercase tracking-widest text-sm mb-3">
-                What We Do
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-5">
-                Our Core Services
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                End-to-end pharmaceutical distribution solutions designed to scale your brand
-                across high-growth global markets.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
-              {services.map((service) => (
-                <Link
-                  key={service.id}
-                  href={service.href}
-                  className="group bg-background border border-border hover:border-primary/50 rounded-xl p-4 sm:p-7 flex flex-col transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                >
-                  <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-3 sm:mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    <span className="w-5 h-5 sm:w-8 sm:h-8">{serviceIconMap[service.icon] ?? <Store className="w-full h-full" />}</span>
-                  </div>
-                  <h3 className="font-serif text-base sm:text-xl font-bold text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-5 line-clamp-3">
-                    {service.shortDescription}
-                  </p>
-                  <div className="flex items-center gap-1.5 text-primary text-sm font-semibold">
-                    <span>Learn More</span>
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 border-2 border-secondary hover:bg-secondary text-secondary hover:text-white font-semibold px-8 py-3.5 rounded-lg transition-all duration-200 group"
-              >
-                View All Services
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-16 md:py-24 bg-secondary relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
-          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/10 blur-[100px]" />
-          <div className="container mx-auto px-4 relative z-10 max-w-7xl m-auto">
-            <div className="text-center mb-10 md:mb-16">
-              <p className="text-primary font-medium uppercase tracking-widest text-sm mb-3">
-                By The Numbers
-              </p>
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-5">
-                Global Impact
-              </h2>
-              <p className="text-white/60 text-lg max-w-2xl mx-auto">
-                Numbers that reflect our commitment to excellence and global pharmaceutical
-                leadership.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="text-center bg-white/5 border border-white/10 rounded-2xl p-5 sm:p-8 hover:bg-white/10 hover:border-primary/40 transition-all duration-300"
-                >
-                  <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary font-serif mb-2 sm:mb-3">
+        <section className="bg-white">
+          <div className="container px-4 sm:px-6 lg:px-8">
+            <div className="grid border-x border-border sm:grid-cols-2 lg:grid-cols-4">
+              {homeStats.map((stat, index) => (
+                <div key={stat.label} className="border-b border-border p-6 sm:p-8 lg:border-b-0 lg:border-r last:lg:border-r-0">
+                  <p className="font-mono text-4xl font-semibold tracking-tight text-foreground lg:text-5xl">
                     {stat.value}
                   </p>
-                  <p className="text-white/70 font-medium text-sm uppercase tracking-wide">
+                  <p className="mt-3 text-sm font-medium text-muted-foreground">
                     {stat.label}
                   </p>
+                  {index === 3 && (
+                    <p className="mt-3 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.12em] text-accent">
+                      <ShieldCheck className="size-4" />
+                      Compliance led
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <Accreditation />
-
-        <GlobalPresenceMap />
-
-        <section className="py-12 md:py-16 bg-background">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="bg-secondary rounded-xl px-5 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6 overflow-hidden relative">
-              <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/20 blur-3xl" />
-              <div className="relative z-10 max-w-2xl">
-                <p className="text-primary font-medium uppercase tracking-widest text-sm mb-3">
-                  Ready to expand?
-                </p>
-                <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight">
-                  Let us open the right markets, channels, and partnerships for your products.
-                </h2>
+        <section className="border-y border-border bg-secondary/70 py-20 sm:py-24">
+          <div className="container grid gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+            <div className="lg:col-span-7">
+              <p className="eyebrow">Who We Are</p>
+              <h2 className="section-title mt-4 max-w-3xl">
+                A dedicated distribution partner for regulated pharmaceutical markets
+              </h2>
+              <p className="body-copy mt-6 max-w-3xl">
+                Exmedco is a Mumbai-based pharmaceutical distribution company specialising in
+                structured market access across Asia, Africa, and the Middle East. We combine
+                deep regulatory knowledge with an integrated multi-channel distribution network
+                to move products efficiently from manufacturers into the hands of consumers,
+                patients, and healthcare institutions.
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="border border-border bg-white">
+                {highlights.map(([label, value]) => (
+                  <div key={label} className="border-b border-border p-5 last:border-b-0">
+                    <p className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primary">
+                      {label}
+                    </p>
+                    <p className="mt-2 font-heading text-lg font-bold text-foreground">
+                      {value}
+                    </p>
+                  </div>
+                ))}
               </div>
-              <Link
-                href="/contact"
-                className="relative z-10 inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-semibold px-7 py-3.5 rounded-lg transition-all duration-200 group"
-              >
-                Contact Us
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
             </div>
           </div>
         </section>
-        <ContactForm compact />
+
+        <section className="bg-white py-20 sm:py-24">
+          <div className="container px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+              <div>
+                <p className="eyebrow">What We Do</p>
+                <h2 className="section-title mt-4">Our Core Services</h2>
+              </div>
+              <p className="body-copy max-w-2xl lg:justify-self-end">
+                A fully integrated pharmaceutical distribution ecosystem designed to give
+                manufacturers reliable, compliant access to the channels and markets that matter.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-5 md:grid-cols-2">
+              {services.map((service) => {
+                const Icon = serviceIcons[service.icon as keyof typeof serviceIcons] ?? ClipboardCheck
+
+                return (
+                  <Link
+                    key={service.id}
+                    href={service.href}
+                    className="clinical-card group block p-6 sm:p-8"
+                    style={{ borderTopColor: service.accent, borderTopWidth: 3 }}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <Icon className="size-8 text-primary transition group-hover:text-accent" />
+                      <ArrowRight className="size-5 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary" />
+                    </div>
+                    <h3 className="mt-8 font-heading text-2xl font-bold tracking-normal text-foreground">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-muted-foreground">
+                      {service.shortDescription}
+                    </p>
+                    <div className="mt-8 border-t border-border pt-5">
+                      <p className="font-mono text-2xl font-semibold text-foreground">
+                        {service.stats.value}
+                      </p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                        {service.stats.label}
+                      </p>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-border bg-secondary py-20 sm:py-24">
+          <div className="container px-4 sm:px-6 lg:px-8">
+            <div className="border-t-2 border-primary pt-8">
+              <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+                <div>
+                  <p className="eyebrow">By The Numbers</p>
+                  <h2 className="section-title mt-4 max-w-xl">
+                    Scale and reach, precisely measured
+                  </h2>
+                  <p className="body-copy mt-5 max-w-xl">
+                    Our operational footprint reflects years of disciplined market-building
+                    and partnership investment across high-growth pharmaceutical regions.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 border border-border bg-white sm:grid-cols-3">
+                  {statistics.map((stat) => (
+                    <div key={stat.label} className="border-b border-r border-border p-5 last:border-r-0 sm:p-6">
+                      <p className="font-mono text-3xl font-semibold text-foreground">
+                        {stat.value}
+                      </p>
+                      <p className="mt-3 text-sm leading-5 text-muted-foreground">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-20 sm:py-24">
+          <div className="container px-4 text-center sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl">
+              <p className="eyebrow justify-center text-center">Ready to Expand?</p>
+              <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-normal text-foreground sm:text-5xl">
+                Let us build the right market access, channels, and partnerships for your pharmaceutical products.
+              </h2>
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
+                <Button asChild className="h-12 rounded-none bg-primary px-7 text-white hover:bg-foreground">
+                  <Link href="/contact">
+                    Contact Us
+                    <ArrowRight className="size-4" />
+                  </Link>
+                </Button>
+                <div className="inline-flex items-center gap-2 border border-border px-4 py-3 text-sm text-muted-foreground">
+                  <CheckCircle2 className="size-4 text-accent" />
+                  100% regulatory compliance focus
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-border bg-foreground py-8 text-white">
+          <div className="container grid gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
+            {[
+              [Globe2, "Asia, Africa & Middle East"],
+              [Building2, "Mumbai headquarters"],
+              [ShieldCheck, "Regulated market access"],
+            ].map(([Icon, text]) => {
+              const LucideIcon = Icon as typeof Globe2
+
+              return (
+                <div key={text as string} className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.12em] text-white/75">
+                  <LucideIcon className="size-4 text-accent" />
+                  {text as string}
+                </div>
+              )
+            })}
+          </div>
+        </section>
       </main>
       <Footer />
     </>
