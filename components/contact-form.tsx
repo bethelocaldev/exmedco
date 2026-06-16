@@ -111,14 +111,16 @@ export function ContactForm({
 
   return (
     <section
-      className="py-16 sm:py-24 border-t border-border bg-white"
+      className="relative overflow-hidden py-16 sm:py-24 border-t border-border bg-gradient-to-br from-white via-sky-50 to-emerald-50"
       id="contact-form"
     >
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="pointer-events-none absolute -left-10 top-16 h-44 w-44 rounded-full bg-sky-300/45" />
+      <div className="pointer-events-none absolute right-8 bottom-16 h-36 w-36 rounded-full bg-emerald-300/50" />
+      <div className="container relative z-10 mx-auto px-4 max-w-7xl">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Header block / Contact details */}
           <div className="lg:col-span-5 flex flex-col justify-center">
-            <div className="mb-6 h-px w-24 bg-primary" />
+            <div className="mb-6 h-px w-24 bg-accent" />
             <p className="eyebrow mb-5">Get In Touch</p>
             <h2 className="section-title mb-4 leading-tight">
               {heading}
@@ -153,8 +155,8 @@ export function ContactForm({
                   href={href}
                   className="flex items-start gap-4 text-sm text-foreground hover:text-primary transition-colors group"
                 >
-                  <div className="w-10 h-10 border border-border flex items-center justify-center group-hover:border-primary transition-colors shrink-0">
-                    <Icon className="h-4 w-4 text-primary" />
+                  <div className="w-10 h-10 border border-sky-200 bg-white/80 flex items-center justify-center group-hover:border-primary transition-colors shrink-0">
+                    <Icon className="h-4 w-4 text-accent" />
                   </div>
                   <div>
                     <p className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground">{label}</p>
@@ -187,7 +189,7 @@ export function ContactForm({
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className="bg-white border border-border p-7 md:p-8 flex flex-col gap-6"
+                className="bg-white/92 border border-sky-200 p-7 md:p-8 flex flex-col gap-6 shadow-[0_24px_60px_rgba(14,165,233,0.12)]"
                 noValidate
               >
                 {/* Name + Email row */}

@@ -51,10 +51,15 @@ export default function HomePage() {
     <>
       <Header />
       <main className="bg-background pt-20">
-        <section className="border-b border-border max-w-7xl mx-auto">
+        <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-sky-100 via-white to-teal-50">
+          <div className="pointer-events-none absolute -left-10 top-20 h-52 w-52 rounded-full bg-sky-300/75 sm:left-10 sm:h-72 sm:w-72" />
+          <div className="pointer-events-none absolute left-[42%] top-20 h-32 w-32 rounded-full bg-emerald-300/80 sm:h-44 sm:w-44" />
+          <div className="pointer-events-none absolute -bottom-8 left-8 h-40 w-40 rounded-full bg-teal-300/80 sm:left-24 sm:h-56 sm:w-56" />
+          <div className="pointer-events-none absolute bottom-24 left-[34%] h-24 w-24 rounded-full bg-blue-300/85 sm:h-32 sm:w-32" />
+          <div className="pointer-events-none absolute right-[48%] top-[52%] h-16 w-16 rounded-full bg-primary/20 sm:h-24 sm:w-24" />
           <div className="container grid min-h-[calc(100vh-5rem)] grid-cols-1 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-            <div className="flex flex-col justify-center py-14 lg:col-span-6 lg:py-20 lg:pr-12">
-              <div className="mb-6 h-px w-24 bg-primary" />
+            <div className="relative z-10 flex flex-col justify-center py-14 lg:col-span-6 lg:py-20 lg:pr-12">
+              <div className="mb-6 h-px w-24 bg-accent" />
               <p className="eyebrow">{slide.eyebrow}</p>
               <h1 className="mt-5 display-title max-w-3xl">
                 {slide.title}
@@ -63,13 +68,13 @@ export default function HomePage() {
                 {slide.description}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button asChild className="h-12 rounded-none bg-foreground px-6 text-white hover:bg-primary">
+                <Button asChild className="h-12 rounded-none bg-primary border-2 border-primary px-6 text-white hover:bg-accent hover:border-accent transition-all duration-200">
                   <Link href="/contact">
                     Discuss Market Access
                     <ArrowRight className="size-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="h-12 rounded-none border-foreground bg-white px-6 text-foreground hover:bg-secondary">
+                <Button asChild variant="outline" className="h-12 rounded-none border-primary bg-white px-6 text-primary hover:bg-secondary hover:text-primary transition-all duration-200">
                   <Link href="/services">View Services</Link>
                 </Button>
               </div>
@@ -127,14 +132,14 @@ export default function HomePage() {
 
   
 
-        <section className="border-y border-border bg-secondary/70 py-20 sm:py-24">
-          <div className="container grid gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8 max-w-7xl mx-auto">
+        <section className="border-y border-border bg-primary text-white py-20 sm:py-24 relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,rgba(14,165,233,0.15),transparent_50%)]">
+          <div className="container grid gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8 max-w-7xl mx-auto relative z-10">
             <div className="lg:col-span-7">
-              <p className="eyebrow">Who We Are</p>
-              <h2 className="section-title mt-4 max-w-3xl">
+              <p className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-accent">Who We Are</p>
+              <h2 className="section-title mt-4 max-w-3xl text-white">
                 A dedicated distribution partner for regulated pharmaceutical markets
               </h2>
-              <p className="body-copy mt-6 max-w-3xl">
+              <p className="text-base sm:text-lg leading-8 text-sky-100/80 mt-6 max-w-3xl">
                 Exmedco is a Mumbai-based pharmaceutical distribution company specialising in
                 structured market access across Asia, Africa, and the Middle East. We combine
                 deep regulatory knowledge with an integrated multi-channel distribution network
@@ -143,13 +148,13 @@ export default function HomePage() {
               </p>
             </div>
             <div className="lg:col-span-5">
-              <div className="border border-border bg-white">
+              <div className="border border-sky-500/25 bg-slate-950/40 backdrop-blur-md">
                 {highlights.map(([label, value]) => (
-                  <div key={label} className="border-b border-border p-5 last:border-b-0">
-                    <p className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primary">
+                  <div key={label} className="border-b border-sky-500/10 p-5 last:border-b-0">
+                    <p className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-accent">
                       {label}
                     </p>
-                    <p className="mt-2 font-heading text-lg font-bold text-foreground">
+                    <p className="mt-2 font-heading text-lg font-bold text-white">
                       {value}
                     </p>
                   </div>
@@ -180,21 +185,29 @@ export default function HomePage() {
                   <Link
                     key={service.id}
                     href={service.href}
-                    className="clinical-card group block p-6 sm:p-8"
+                    className="clinical-card group block p-6 sm:p-8 bg-gradient-to-br from-white to-sky-50/25 hover:to-sky-50/60 transition-all duration-300"
                     style={{ borderTopColor: service.accent, borderTopWidth: 3 }}
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <Icon className="size-8 text-primary transition group-hover:text-accent" />
+                      <div 
+                        className="flex size-14 items-center justify-center border transition-all duration-300 group-hover:bg-primary"
+                        style={{ borderColor: service.accent, backgroundColor: `${service.accent}12` }}
+                      >
+                        <Icon 
+                          className="size-7 transition-colors duration-300 group-hover:text-white" 
+                          style={{ color: service.accent }} 
+                        />
+                      </div>
                       <ArrowRight className="size-5 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary" />
                     </div>
-                    <h3 className="mt-8 font-heading text-2xl font-bold tracking-normal text-foreground">
+                    <h3 className="mt-6 font-heading text-2xl font-bold tracking-normal text-foreground group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-muted-foreground">
                       {service.shortDescription}
                     </p>
-                    <div className="mt-8 border-t border-border pt-5">
-                      <p className="font-mono text-2xl font-semibold text-foreground">
+                    <div className="mt-6 border-t border-border pt-4">
+                      <p className="font-mono text-2xl font-semibold text-primary group-hover:text-accent transition-colors">
                         {service.stats.value}
                       </p>
                       <p className="mt-1 text-xs uppercase tracking-[0.12em] text-muted-foreground">
@@ -210,27 +223,27 @@ export default function HomePage() {
 
         <Accreditation />
 
-        <section className="border-y border-border bg-secondary py-20 sm:py-24">
-          <div className="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <div className="border-t-2 border-primary pt-8">
+        <section className="border-y border-border bg-primary text-white py-20 sm:py-24 relative overflow-hidden bg-[radial-gradient(ellipse_at_bottom_left,rgba(14,165,233,0.12),transparent_50%)]">
+          <div className="container px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+            <div className="border-t-2 border-accent pt-8">
               <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
                 <div>
-                  <p className="eyebrow">By The Numbers</p>
-                  <h2 className="section-title mt-4 max-w-xl">
+                  <p className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-accent">By The Numbers</p>
+                  <h2 className="section-title mt-4 max-w-xl text-white">
                     Scale and reach, precisely measured
                   </h2>
-                  <p className="body-copy mt-5 max-w-xl">
+                  <p className="text-base sm:text-lg leading-8 text-sky-100/80 mt-5 max-w-xl">
                     Our operational footprint reflects years of disciplined market-building
                     and partnership investment across high-growth pharmaceutical regions.
                   </p>
                 </div>
-                <div className="grid grid-cols-2 border border-border bg-white sm:grid-cols-3">
+                <div className="grid grid-cols-2 border border-sky-500/25 bg-slate-950/40 backdrop-blur-md sm:grid-cols-3">
                   {statistics.map((stat) => (
-                    <div key={stat.label} className="border-b border-r border-border p-5 last:border-r-0 sm:p-6">
-                      <p className="font-mono text-3xl font-semibold text-foreground">
+                    <div key={stat.label} className="border-b border-r border-sky-500/10 p-5 last:border-r-0 sm:p-6">
+                      <p className="font-mono text-3xl font-semibold text-accent">
                         {stat.value}
                       </p>
-                      <p className="mt-3 text-sm leading-5 text-muted-foreground">
+                      <p className="mt-3 text-sm leading-5 text-sky-100/70 font-medium">
                         {stat.label}
                       </p>
                     </div>

@@ -60,9 +60,9 @@ export default function GlobalPresenceMap() {
     (iso: string) => {
       const regionId = ISO_TO_REGION[iso]
       if (!regionId) return "#1e2a3a"
-      if (hoveredIso === iso) return "#ff7a40"
-      if (activeRegion && activeRegion !== regionId) return "#c0440e"
-      return "#E6561A"
+      if (hoveredIso === iso) return "#38bdf8"
+      if (activeRegion && activeRegion !== regionId) return "#0f766e"
+      return "#0ea5e9"
     },
     [hoveredIso, activeRegion]
   )
@@ -106,7 +106,7 @@ export default function GlobalPresenceMap() {
                 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold
                 border transition-all duration-200 cursor-pointer
                 ${activeRegion === region.id
-                  ? "bg-primary border-primary text-white shadow-[0_0_20px_rgba(230,86,26,0.4)]"
+                  ? "bg-accent border-accent text-white shadow-[0_0_20px_rgba(14,165,233,0.4)]"
                   : "border-white/20 text-white/70 hover:border-primary/60 hover:text-white bg-white/5"
                 }
               `}
@@ -174,7 +174,7 @@ export default function GlobalPresenceMap() {
                           key={geo.rsmKey}
                           geography={geo}
                           fill={fill}
-                          stroke={isPresence ? "#ff9060" : "#1e3048"}
+                          stroke={isPresence ? "#bae6fd" : "#1e3048"}
                           strokeWidth={isPresence ? 0.8 : 0.3}
                           style={{
                             default: { outline: "none", cursor: isPresence ? "pointer" : "default" },

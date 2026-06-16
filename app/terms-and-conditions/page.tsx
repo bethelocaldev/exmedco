@@ -14,12 +14,15 @@ export default function TermsPage() {
     <>
       <Header />
       <main>
-        <section className="py-20 bg-background">
-          <h1 className="my-15 display-title max-w-3xl mx-auto">
+        <section className="relative overflow-hidden bg-gradient-to-br from-sky-100 via-white to-teal-50 py-20">
+          <div className="pointer-events-none absolute -left-12 top-16 h-52 w-52 rounded-full bg-sky-300/60" />
+          <div className="pointer-events-none absolute right-10 top-24 h-36 w-36 rounded-full bg-emerald-300/60" />
+          <div className="pointer-events-none absolute bottom-14 left-[48%] h-24 w-24 rounded-full bg-teal-300/65" />
+          <h1 className="relative z-10 my-15 display-title max-w-3xl mx-auto">
             Terms and Conditions
           </h1>
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto prose prose-lg prose-headings:font-serif prose-headings:text-secondary prose-p:text-muted-foreground prose-a:text-primary">
+          <div className="container relative z-10 mx-auto px-4">
+            <div className="max-w-3xl mx-auto border border-sky-200 bg-white/90 p-6 shadow-[0_24px_60px_rgba(14,165,233,0.12)] prose prose-lg prose-headings:font-serif prose-headings:text-primary prose-p:text-muted-foreground prose-a:text-primary sm:p-8">
               <h2>Agreement to Terms</h2>
               <p>
                 By accessing or using the FHY Gloexpo website and services, you agree to be bound

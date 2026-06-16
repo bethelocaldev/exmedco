@@ -52,10 +52,13 @@ export default function ContactPage() {
     <>
       <Header />
       <main className="bg-background pt-20">
-        <section className="border-b border-border bg-white">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-12 lg:px-8">
+        <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-sky-100 via-white to-teal-50">
+          <div className="pointer-events-none absolute -left-12 top-16 h-56 w-56 rounded-full bg-sky-300/75" />
+          <div className="pointer-events-none absolute right-12 top-24 h-40 w-40 rounded-full bg-emerald-300/75" />
+          <div className="pointer-events-none absolute bottom-8 left-[45%] h-28 w-28 rounded-full bg-teal-300/80" />
+          <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-12 lg:px-8">
             <div className="lg:col-span-8">
-              <div className="mb-6 h-px w-24 bg-primary" />
+              <div className="mb-6 h-px w-24 bg-accent" />
               <p className="eyebrow">Get in Touch</p>
               <h1 className="mt-5 display-title max-w-4xl">
                 Contact Exmedco
@@ -66,13 +69,13 @@ export default function ContactPage() {
                 strategy, and logistics solutions.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button asChild className="h-12 rounded-none bg-foreground px-6 text-white hover:bg-primary">
+                <Button asChild className="h-12 rounded-none bg-primary px-6 text-white hover:bg-accent">
                   <Link href={`mailto:${contactInfo.email}`}>
                     Email Our Team
                     <ArrowRight className="size-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="h-12 rounded-none border-foreground bg-white px-6 text-foreground hover:bg-secondary">
+                <Button asChild variant="outline" className="h-12 rounded-none border-primary bg-white px-6 text-primary hover:bg-secondary">
                   <Link href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}>Call Headquarters</Link>
                 </Button>
               </div>
@@ -80,14 +83,14 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="bg-secondary/70 py-18 sm:py-24">
+        <section className="bg-gradient-to-br from-blue-50 via-sky-50 to-teal-50 py-18 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-5 lg:grid-cols-3">
               {contactCards.map((card) => {
                 const Icon = card.icon
 
                 return (
-                  <article key={card.label} className="clinical-card flex flex-col p-6 sm:p-8">
+                  <article key={card.label} className="clinical-card flex flex-col bg-gradient-to-br from-white via-white to-sky-50 p-6 shadow-[0_18px_45px_rgba(14,165,233,0.08)] sm:p-8">
                     <div className="flex items-start justify-between gap-5">
                       <div>
                         <p className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primary">
@@ -97,7 +100,9 @@ export default function ContactPage() {
                           {card.title}
                         </h2>
                       </div>
-                      <Icon className="size-7 text-accent" />
+                      <div className="flex size-14 items-center justify-center border border-sky-200 bg-sky-50 text-accent">
+                        <Icon className="size-7" />
+                      </div>
                     </div>
                     <p className="mt-5 whitespace-pre-line text-sm leading-7 text-muted-foreground">
                       {card.text}

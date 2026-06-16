@@ -45,8 +45,11 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
       <Header />
       <main className="bg-background pt-20">
         {/* ── Hero ── */}
-        <section className="border-b border-border bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-sky-100 via-white to-teal-50">
+          <div className="pointer-events-none absolute -left-12 top-16 h-52 w-52 rounded-full bg-sky-300/70" />
+          <div className="pointer-events-none absolute right-12 top-24 h-40 w-40 rounded-full bg-emerald-300/70" />
+          <div className="pointer-events-none absolute bottom-4 left-[40%] h-28 w-28 rounded-full bg-teal-300/75" />
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
             <Link
               href="/services"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground transition hover:text-primary"
@@ -61,8 +64,8 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
               />
               <div className="flex items-center gap-4 mb-5">
                 <div
-                  className="flex size-14 items-center justify-center border"
-                  style={{ borderColor: service.accent }}
+                  className="flex size-14 items-center justify-center border bg-white/80 shadow-[0_14px_35px_rgba(14,165,233,0.14)]"
+                  style={{ borderColor: service.accent, backgroundColor: `${service.accent}18` }}
                 >
                   <Icon className="size-7" style={{ color: service.accent }} />
                 </div>
@@ -78,7 +81,7 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
             </div>
 
             {/* Stat highlight */}
-            <div className="mt-10 inline-flex items-center gap-5 border border-border px-6 py-4">
+            <div className="mt-10 inline-flex items-center gap-5 border border-sky-200 bg-white/82 px-6 py-4 shadow-[0_18px_45px_rgba(14,165,233,0.12)]">
               <p className="font-mono text-3xl font-semibold text-foreground">
                 {service.stats.value}
               </p>
@@ -97,7 +100,7 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
 
         {/* ── Channels / Capabilities ── */}
         {detailedChannels && detailedChannels.length > 0 && (
-          <section className="bg-secondary/70 py-18 sm:py-24">
+          <section className="bg-gradient-to-br from-blue-50 via-sky-50 to-teal-50 py-18 sm:py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="mb-12 max-w-2xl">
                 <p className="eyebrow">
@@ -116,7 +119,7 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
                 {detailedChannels.map((channel, index) => (
                   <article
                     key={channel.name}
-                    className="clinical-card bg-white p-6 sm:p-8"
+                    className="clinical-card bg-gradient-to-br from-white via-white to-sky-50 p-6 shadow-[0_18px_45px_rgba(14,165,233,0.08)] sm:p-8"
                     style={{
                       borderTopColor: service.accent,
                       borderTopWidth: 2,
@@ -140,25 +143,27 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
 
         {/* ── Process Flow (logistics only) ── */}
         {processFlow && processFlow.length > 0 && (
-          <section className="border-y border-border bg-white py-18 sm:py-24">
+          <section className="relative overflow-hidden border-y border-border bg-primary py-18 text-white sm:py-24">
+            <div className="pointer-events-none absolute -right-20 top-10 h-64 w-64 rounded-full bg-sky-400/25" />
+            <div className="pointer-events-none absolute bottom-8 left-10 h-36 w-36 rounded-full bg-emerald-400/25" />
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <p className="eyebrow">Process Flow</p>
-              <h2 className="section-title mt-4 mb-12 max-w-xl">
+              <p className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-accent">Process Flow</p>
+              <h2 className="section-title mt-4 mb-12 max-w-xl text-white">
                 From inbound to last mile
               </h2>
-              <div className="grid grid-cols-2 gap-px bg-border md:grid-cols-4">
+              <div className="relative z-10 grid grid-cols-2 gap-px bg-sky-500/25 md:grid-cols-4">
                 {processFlow.map((step, index) => (
-                  <div key={step.step} className="bg-white p-6 sm:p-8">
+                  <div key={step.step} className="bg-slate-950/45 p-6 sm:p-8">
                     <span
                       className="font-mono text-4xl font-bold"
                       style={{ color: service.accent, opacity: 0.25 }}
                     >
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <h3 className="mt-4 font-heading text-lg font-bold text-foreground">
+                    <h3 className="mt-4 font-heading text-lg font-bold text-white">
                       {step.step}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-muted-foreground">
+                    <p className="mt-2 text-sm leading-6 text-sky-100/75">
                       {step.description}
                     </p>
                   </div>
@@ -171,7 +176,7 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
         {/* ── Outcomes ── */}
         {outcomes && outcomes.length > 0 && (
           <section
-            className={`py-18 sm:py-24 ${processFlow ? "bg-secondary/70" : "border-y border-border bg-white"}`}
+            className={`py-18 sm:py-24 ${processFlow ? "bg-gradient-to-br from-blue-50 via-sky-50 to-teal-50" : "border-y border-border bg-gradient-to-br from-white via-sky-50 to-teal-50"}`}
           >
             <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
               <div className="lg:col-span-5">
@@ -196,7 +201,7 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
                   {outcomes.map((outcome) => (
                     <div
                       key={outcome}
-                      className="flex items-start gap-3 border border-border bg-white p-4 sm:p-5"
+                      className="flex items-start gap-3 border border-sky-200 bg-white p-4 shadow-[0_12px_30px_rgba(14,165,233,0.07)] sm:p-5"
                     >
                       <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-accent" />
                       <p className="text-sm leading-6 text-foreground">
@@ -211,7 +216,7 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
         )}
 
         {/* ── Other Services ── */}
-        <section className="bg-secondary/50 py-18 sm:py-24">
+        <section className="bg-gradient-to-br from-sky-50 via-white to-teal-50 py-18 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="eyebrow">Explore More</p>
             <h2 className="section-title mt-4 mb-10">Other Services</h2>
@@ -224,17 +229,22 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
                   <Link
                     key={other.id}
                     href={other.href}
-                    className="clinical-card group block bg-white p-6"
+                    className="clinical-card group block bg-gradient-to-br from-white via-white to-sky-50 p-6 shadow-[0_16px_35px_rgba(14,165,233,0.08)]"
                     style={{
                       borderTopColor: other.accent,
                       borderTopWidth: 3,
                     }}
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <OtherIcon
-                        className="size-6"
-                        style={{ color: other.accent }}
-                      />
+                      <div
+                        className="flex size-11 items-center justify-center border"
+                        style={{ borderColor: other.accent, backgroundColor: `${other.accent}18` }}
+                      >
+                        <OtherIcon
+                          className="size-6"
+                          style={{ color: other.accent }}
+                        />
+                      </div>
                       <ArrowRight className="size-4 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary" />
                     </div>
                     <h3 className="mt-5 font-heading text-lg font-bold text-foreground">

@@ -44,10 +44,13 @@ export default function ServicesPage() {
       <Header />
       <main className="bg-background pt-20">
         {/* ── Hero ── */}
-        <section className="border-b border-border bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-sky-100 via-white to-teal-50">
+          <div className="pointer-events-none absolute -left-12 top-16 h-52 w-52 rounded-full bg-sky-300/70" />
+          <div className="pointer-events-none absolute right-10 top-20 h-36 w-36 rounded-full bg-emerald-300/75" />
+          <div className="pointer-events-none absolute bottom-8 left-[45%] h-28 w-28 rounded-full bg-teal-300/75" />
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
             <div className="max-w-4xl">
-              <div className="mb-6 h-px w-24 bg-primary" />
+              <div className="mb-6 h-px w-24 bg-accent" />
               <p className="eyebrow">Our Services</p>
               <h1 className="mt-5 display-title max-w-4xl">
                 End-to-End Pharmaceutical Distribution Across Asia, Africa & the Middle East
@@ -62,7 +65,7 @@ export default function ServicesPage() {
         </section>
 
         {/* ── Services Grid ── */}
-        <section className="bg-secondary/70 py-18 sm:py-24">
+        <section className="bg-gradient-to-br from-blue-50 via-sky-50 to-teal-50 py-18 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-5 md:grid-cols-2">
               {services.map((service) => {
@@ -74,17 +77,22 @@ export default function ServicesPage() {
                   <Link
                     key={service.id}
                     href={service.href}
-                    className="clinical-card group block p-6 sm:p-8 bg-white"
+                    className="clinical-card group block p-6 sm:p-8 bg-gradient-to-br from-white via-white to-sky-50 shadow-[0_18px_45px_rgba(14,165,233,0.08)]"
                     style={{
                       borderTopColor: service.accent,
                       borderTopWidth: 3,
                     }}
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <Icon
-                        className="size-8 transition"
-                        style={{ color: service.accent }}
-                      />
+                      <div
+                        className="flex size-14 items-center justify-center border"
+                        style={{ borderColor: service.accent, backgroundColor: `${service.accent}18` }}
+                      >
+                        <Icon
+                          className="size-7 transition"
+                          style={{ color: service.accent }}
+                        />
+                      </div>
                       <ArrowRight className="size-5 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary" />
                     </div>
                     <h2 className="mt-8 font-heading text-2xl font-bold tracking-normal text-foreground">
@@ -124,26 +132,28 @@ export default function ServicesPage() {
         </section>
 
         {/* ── Stats Banner ── */}
-        <section className="border-y border-border bg-white py-18 sm:py-24">
+        <section className="relative overflow-hidden border-y border-border bg-primary py-18 text-white sm:py-24">
+          <div className="pointer-events-none absolute -right-20 top-8 h-64 w-64 rounded-full bg-sky-400/25" />
+          <div className="pointer-events-none absolute bottom-10 left-10 h-36 w-36 rounded-full bg-emerald-400/25" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="border-t-2 border-primary pt-8">
+            <div className="relative z-10 border-t-2 border-accent pt-8">
               <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
                 <div>
-                  <p className="eyebrow">By The Numbers</p>
-                  <h2 className="section-title mt-4 max-w-xl">
+                  <p className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-accent">By The Numbers</p>
+                  <h2 className="section-title mt-4 max-w-xl text-white">
                     Scale and reach, precisely measured
                   </h2>
                 </div>
-                <div className="grid grid-cols-2 border border-border sm:grid-cols-3">
+                <div className="grid grid-cols-2 border border-sky-500/25 bg-slate-950/40 sm:grid-cols-3">
                   {statistics.map((stat) => (
                     <div
                       key={stat.label}
-                      className="border-b border-r border-border p-5 last:border-r-0 sm:p-6"
+                      className="border-b border-r border-sky-500/10 p-5 last:border-r-0 sm:p-6"
                     >
-                      <p className="font-mono text-3xl font-semibold text-foreground">
+                      <p className="font-mono text-3xl font-semibold text-accent">
                         {stat.value}
                       </p>
-                      <p className="mt-3 text-sm leading-5 text-muted-foreground">
+                      <p className="mt-3 text-sm leading-5 text-sky-100/75">
                         {stat.label}
                       </p>
                     </div>

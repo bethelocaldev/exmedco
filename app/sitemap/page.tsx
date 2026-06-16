@@ -23,13 +23,16 @@ export default function SitemapPage() {
       <Header />
       <main>
 
-        <section className="py-20 bg-background">
-          <h1 className="my-15 display-title max-w-5xl mx-auto">
+        <section className="relative overflow-hidden bg-gradient-to-br from-sky-100 via-white to-teal-50 py-20">
+          <div className="pointer-events-none absolute -left-12 top-16 h-52 w-52 rounded-full bg-sky-300/60" />
+          <div className="pointer-events-none absolute right-10 top-24 h-36 w-36 rounded-full bg-emerald-300/60" />
+          <div className="pointer-events-none absolute bottom-14 left-[48%] h-24 w-24 rounded-full bg-teal-300/65" />
+          <h1 className="relative z-10 my-15 display-title max-w-5xl mx-auto">
               Sitemap
           </h1>
-          <div className="container mx-auto px-4 max-w-5xl">
+          <div className="container relative z-10 mx-auto px-4 max-w-5xl">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-card border border-border rounded-xl p-7">
+              <div className="bg-white/90 border border-sky-200 rounded-xl p-7 shadow-[0_20px_50px_rgba(14,165,233,0.1)]">
                 <h2 className="font-serif text-2xl font-bold text-foreground mb-5">
                   Main Pages
                 </h2>
@@ -48,7 +51,7 @@ export default function SitemapPage() {
                 </ul>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-7">
+              <div className="bg-white/90 border border-sky-200 rounded-xl p-7 shadow-[0_20px_50px_rgba(14,165,233,0.1)]">
                 <h2 className="font-serif text-2xl font-bold text-foreground mb-5">
                   Services
                 </h2>
@@ -67,7 +70,7 @@ export default function SitemapPage() {
                 </ul>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-7 md:col-span-2">
+              <div className="bg-white/90 border border-sky-200 rounded-xl p-7 shadow-[0_20px_50px_rgba(14,165,233,0.1)] md:col-span-2">
                 <h2 className="font-serif text-2xl font-bold text-foreground mb-5">
                   Utility Pages
                 </h2>

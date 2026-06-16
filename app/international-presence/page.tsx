@@ -52,10 +52,13 @@ export default function InternationalPresencePage() {
       <Header />
       <main className="bg-background pt-20">
         {/* ── Hero ── */}
-        <section className="border-b border-border bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-sky-100 via-white to-teal-50">
+          <div className="pointer-events-none absolute -left-12 top-16 h-56 w-56 rounded-full bg-sky-300/70" />
+          <div className="pointer-events-none absolute right-12 top-24 h-40 w-40 rounded-full bg-emerald-300/75" />
+          <div className="pointer-events-none absolute bottom-8 left-[46%] h-28 w-28 rounded-full bg-teal-300/75" />
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
             <div className="max-w-4xl">
-              <div className="mb-6 h-px w-24 bg-primary" />
+              <div className="mb-6 h-px w-24 bg-accent" />
               <p className="eyebrow">Global Reach</p>
               <h1 className="mt-5 display-title max-w-4xl">
                 Active Across High-Growth Pharmaceutical Markets on Three Continents
@@ -74,9 +77,9 @@ export default function InternationalPresencePage() {
               {highlights.map(({ icon: Icon, text }) => (
                 <div
                   key={text}
-                  className="flex items-start gap-3 border border-border p-4"
+                  className="flex items-start gap-3 border border-sky-200 bg-white/82 p-4 shadow-[0_16px_35px_rgba(14,165,233,0.1)]"
                 >
-                  <Icon className="mt-0.5 size-5 shrink-0 text-primary" />
+                  <Icon className="mt-0.5 size-5 shrink-0 text-accent" />
                   <p className="text-sm font-medium leading-6 text-foreground">
                     {text}
                   </p>
@@ -90,7 +93,7 @@ export default function InternationalPresencePage() {
         <GlobalPresenceMap />
 
         {/* ── Regions Breakdown ── */}
-        <section className="bg-secondary/70 py-18 sm:py-24">
+        <section className="bg-gradient-to-br from-blue-50 via-sky-50 to-teal-50 py-18 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="eyebrow">Regional Coverage</p>
             <h2 className="section-title mt-4 mb-12 max-w-xl">
@@ -101,7 +104,7 @@ export default function InternationalPresencePage() {
               {globalPresence.regions.map((region) => (
                 <div
                   key={region.name}
-                  className="clinical-card bg-white p-6 sm:p-8"
+                  className="clinical-card bg-gradient-to-br from-white via-white to-sky-50 p-6 shadow-[0_18px_45px_rgba(14,165,233,0.08)] sm:p-8"
                   style={{ borderTopColor: "#1A56DB", borderTopWidth: 3 }}
                 >
                   <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primary">
@@ -132,7 +135,7 @@ export default function InternationalPresencePage() {
         </section>
 
         {/* ── Market Highlights ── */}
-        <section className="border-y border-border bg-white py-18 sm:py-24">
+        <section className="border-y border-border bg-gradient-to-br from-white via-sky-50 to-teal-50 py-18 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-12">
               <div className="lg:col-span-5">
@@ -147,7 +150,7 @@ export default function InternationalPresencePage() {
 
                 {/* Market Stats */}
                 <div className="mt-8 grid grid-cols-2 gap-4">
-                  <div className="border border-border p-5">
+                  <div className="border border-sky-200 bg-white p-5 shadow-[0_12px_30px_rgba(14,165,233,0.07)]">
                     <p className="font-mono text-2xl font-semibold text-foreground">
                       {globalPresence.marketStats.apacB2CMarket}
                     </p>
@@ -155,7 +158,7 @@ export default function InternationalPresencePage() {
                       APAC B2C Market Size by {globalPresence.marketStats.projectedBy}
                     </p>
                   </div>
-                  <div className="border border-border p-5">
+                  <div className="border border-emerald-200 bg-white p-5 shadow-[0_12px_30px_rgba(16,185,129,0.07)]">
                     <p className="font-mono text-2xl font-semibold text-foreground">
                       {globalPresence.marketStats.newConsumers}
                     </p>
@@ -171,7 +174,7 @@ export default function InternationalPresencePage() {
                   {globalPresence.marketHighlights.map((market) => (
                     <div
                       key={market.country}
-                      className="border border-border p-5 sm:p-6"
+                      className="border border-sky-200 bg-white p-5 shadow-[0_12px_30px_rgba(14,165,233,0.07)] sm:p-6"
                     >
                       <div className="flex items-center gap-3">
                         <div className="flex size-10 items-center justify-center bg-primary/10">
@@ -193,26 +196,28 @@ export default function InternationalPresencePage() {
         </section>
 
         {/* ── Stats ── */}
-        <section className="bg-secondary py-18 sm:py-24">
+        <section className="relative overflow-hidden bg-primary py-18 text-white sm:py-24">
+          <div className="pointer-events-none absolute -right-20 top-8 h-64 w-64 rounded-full bg-sky-400/25" />
+          <div className="pointer-events-none absolute bottom-10 left-10 h-36 w-36 rounded-full bg-emerald-400/25" />
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="border-t-2 border-primary pt-8">
+            <div className="relative z-10 border-t-2 border-accent pt-8">
               <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
                 <div>
-                  <p className="eyebrow">By The Numbers</p>
-                  <h2 className="section-title mt-4 max-w-xl">
+                  <p className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-accent">By The Numbers</p>
+                  <h2 className="section-title mt-4 max-w-xl text-white">
                     Operational scale across three regions
                   </h2>
                 </div>
-                <div className="grid grid-cols-2 border border-border bg-white sm:grid-cols-3">
+                <div className="grid grid-cols-2 border border-sky-500/25 bg-slate-950/40 sm:grid-cols-3">
                   {statistics.map((stat) => (
                     <div
                       key={stat.label}
-                      className="border-b border-r border-border p-5 last:border-r-0 sm:p-6"
+                      className="border-b border-r border-sky-500/10 p-5 last:border-r-0 sm:p-6"
                     >
-                      <p className="font-mono text-3xl font-semibold text-foreground">
+                      <p className="font-mono text-3xl font-semibold text-accent">
                         {stat.value}
                       </p>
-                      <p className="mt-3 text-sm leading-5 text-muted-foreground">
+                      <p className="mt-3 text-sm leading-5 text-sky-100/75">
                         {stat.label}
                       </p>
                     </div>
@@ -226,7 +231,7 @@ export default function InternationalPresencePage() {
         <ContactForm />
 
         {/* ── Footer bar ── */}
-        <section className="bg-white py-8">
+        <section className="bg-gradient-to-r from-sky-50 via-white to-teal-50 py-8">
           <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
             {[
               [Globe2, "Asia, Africa & Middle East"],

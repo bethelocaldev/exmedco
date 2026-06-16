@@ -37,10 +37,13 @@ export default function AboutPage() {
     <>
       <Header />
       <main className="bg-background pt-20">
-        <section className="border-b border-border bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+        <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-sky-100 via-white to-teal-50">
+          <div className="pointer-events-none absolute -left-12 top-16 h-56 w-56 rounded-full bg-sky-300/70" />
+          <div className="pointer-events-none absolute right-12 top-24 h-40 w-40 rounded-full bg-emerald-300/70" />
+          <div className="pointer-events-none absolute bottom-8 left-[44%] h-28 w-28 rounded-full bg-teal-300/75" />
+          <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
             <div className="max-w-4xl">
-              <div className="mb-6 h-px w-24 bg-primary" />
+              <div className="mb-6 h-px w-24 bg-accent" />
               <p className="eyebrow">About Exmedco</p>
               <h1 className="mt-5 display-title max-w-4xl">
                 Specialist Pharmaceutical Distribution. Strategic Market Access.
@@ -53,14 +56,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="bg-secondary/70 py-18 sm:py-24">
-          <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+        <section className="border-y border-border bg-primary text-white py-18 sm:py-24 relative overflow-hidden bg-[radial-gradient(ellipse_at_top_right,rgba(14,165,233,0.15),transparent_50%)]">
+          <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:px-8 relative z-10">
             <div className="lg:col-span-7">
-              <p className="eyebrow">Structured Growth</p>
-              <h2 className="section-title mt-4 max-w-3xl">
+              <p className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-accent">Structured Growth</p>
+              <h2 className="section-title mt-4 max-w-3xl text-white">
                 Market access for manufacturers who are serious about growth
               </h2>
-              <div className="mt-8 max-w-3xl space-y-6 text-base leading-8 text-muted-foreground sm:text-lg">
+              <div className="mt-8 max-w-3xl space-y-6 text-base leading-8 text-sky-100/80 sm:text-lg">
                 <p>
                   Exmedco was established to solve a specific and persistent challenge for
                   international pharmaceutical manufacturers: gaining reliable, compliant access
@@ -82,7 +85,7 @@ export default function AboutPage() {
             </div>
 
             <aside className="lg:col-span-5">
-              <div className="border border-border bg-white p-6 sm:p-8">
+              <div className="border border-sky-500/25 bg-slate-950/40 backdrop-blur-md p-6 sm:p-8">
                 <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
                   Company Snapshot
                 </p>
@@ -94,11 +97,11 @@ export default function AboutPage() {
                     ["Markets Operated", companyInfo.marketsOperated],
                     ["Regulatory Compliance", companyInfo.regulatoryCompliance],
                   ].map(([label, value]) => (
-                    <div key={label} className="border-b border-border pb-5 last:border-b-0 last:pb-0">
-                      <p className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-primary">
+                    <div key={label} className="border-b border-sky-500/10 pb-5 last:border-b-0 last:pb-0">
+                      <p className="font-mono text-[0.68rem] uppercase tracking-[0.14em] text-accent">
                         {label}
                       </p>
-                      <p className="mt-2 font-heading text-xl font-bold text-foreground">
+                      <p className="mt-2 font-heading text-xl font-bold text-white">
                         {value}
                       </p>
                     </div>
@@ -116,9 +119,11 @@ export default function AboutPage() {
                 const Icon = card.icon
 
                 return (
-                  <article key={card.label} className="clinical-card p-6 sm:p-8">
-                    <Icon className="size-8 text-primary" />
-                    <h2 className="mt-7 font-heading text-2xl font-bold text-foreground">
+                  <article key={card.label} className="clinical-card group p-6 sm:p-8 bg-gradient-to-br from-white to-sky-50/25 hover:to-sky-50/60 transition-all duration-300">
+                    <div className="flex size-14 items-center justify-center border border-sky-200 bg-sky-50 text-accent transition-all duration-300 group-hover:bg-primary group-hover:text-white mb-6">
+                      <Icon className="size-7" />
+                    </div>
+                    <h2 className="font-heading text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
                       {card.label}
                     </h2>
                     <p className="mt-4 text-sm leading-7 text-muted-foreground">
@@ -131,10 +136,10 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="border-y border-border bg-secondary py-18 sm:py-24">
+        <section className="border-y border-border bg-gradient-to-br from-white via-sky-50/30 to-sky-50/70 py-18 sm:py-24">
           <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
             <div>
-              <p className="eyebrow">Operational Standards</p>
+              <p className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-accent">Operational Standards</p>
               <h2 className="section-title mt-4 max-w-xl">
                 Compliance-led distribution across every active market
               </h2>
@@ -144,9 +149,9 @@ export default function AboutPage() {
                 and long-term product integrity.
               </p>
             </div>
-            <div className="grid border border-border bg-white sm:grid-cols-2">
+            <div className="grid border border-sky-200 bg-white sm:grid-cols-2">
               {accreditations.map((item) => (
-                <div key={item.name} className="border-b border-r border-border p-6 even:border-r-0">
+                <div key={item.name} className="border-b border-r border-sky-100 p-6 even:border-r-0">
                   <CheckCircle2 className="size-6 text-accent" />
                   <h3 className="mt-5 font-heading text-xl font-bold text-foreground">
                     {item.name}
@@ -162,11 +167,11 @@ export default function AboutPage() {
 
         <Accreditation />
 
-        <section className="bg-white py-18 sm:py-24">
+        <section className="bg-gradient-to-b from-white to-sky-50/50 py-18 sm:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
               <div>
-                <p className="eyebrow">Measured Reach</p>
+                <p className="font-mono text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-accent">Measured Reach</p>
                 <h2 className="section-title mt-4">Built for regional scale</h2>
               </div>
               <p className="body-copy max-w-2xl lg:justify-self-end">
@@ -174,10 +179,10 @@ export default function AboutPage() {
                 operating discipline into one expansion partner.
               </p>
             </div>
-            <div className="mt-10 grid grid-cols-2 border border-border sm:grid-cols-3 lg:grid-cols-6">
+            <div className="mt-10 grid grid-cols-2 border border-sky-200 bg-white sm:grid-cols-3 lg:grid-cols-6">
               {statistics.map((stat) => (
-                <div key={stat.label} className="border-b border-r border-border p-5 lg:border-b-0">
-                  <p className="font-mono text-3xl font-semibold text-foreground">
+                <div key={stat.label} className="border-b border-r border-sky-100 p-5 lg:border-b-0 hover:bg-sky-50/20 transition-colors duration-200">
+                  <p className="font-mono text-3xl font-semibold text-primary">
                     {stat.value}
                   </p>
                   <p className="mt-3 text-sm leading-5 text-muted-foreground">
