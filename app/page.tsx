@@ -17,6 +17,7 @@ import {
 import Accreditation from "@/components/accreditation"
 import { Header, Footer } from "@/components/layout"
 import { Button } from "@/components/ui/button"
+import { ContactForm } from "@/components/contact-form"
 import { heroSlides, homeStats, services, statistics } from "@/data/site-data"
 
 const serviceIcons = {
@@ -240,28 +241,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="bg-white py-20 sm:py-24">
-          <div className="container px-4 text-center sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <div className="mx-auto max-w-3xl">
-              <p className="eyebrow justify-center text-center">Ready to Expand?</p>
-              <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-normal text-foreground sm:text-5xl">
-                Let us build the right market access, channels, and partnerships for your pharmaceutical products.
-              </h2>
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
-                <Button asChild className="h-12 rounded-none bg-primary px-7 text-white hover:bg-foreground">
-                  <Link href="/contact">
-                    Contact Us
-                    <ArrowRight className="size-4" />
-                  </Link>
-                </Button>
-                <div className="inline-flex items-center gap-2 border border-border px-4 py-3 text-sm text-muted-foreground">
-                  <CheckCircle2 className="size-4 text-accent" />
-                  100% regulatory compliance focus
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ContactForm />
 
         <section className="border-t border-border bg-foreground py-8 text-white">
           <div className="container grid gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">

@@ -12,6 +12,7 @@ import {
 } from "lucide-react"
 import { Header, Footer } from "@/components/layout"
 import { Button } from "@/components/ui/button"
+import { ContactForm } from "@/components/contact-form"
 import { services } from "@/data/site-data"
 
 const serviceIcons: Record<string, typeof Store> = {
@@ -249,29 +250,7 @@ export default function ServiceDetailLayout({ serviceId }: ServiceDetailProps) {
           </div>
         </section>
 
-        {/* ── Bottom CTA ── */}
-        <section className="border-t border-border bg-foreground py-16 text-white sm:py-20">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
-            <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-                Partnership Ready
-              </p>
-              <h2 className="mt-4 max-w-3xl font-heading text-3xl font-extrabold tracking-normal sm:text-4xl">
-                Ready to discuss {service.title.toLowerCase()} across your
-                target markets?
-              </h2>
-            </div>
-            <Button
-              asChild
-              className="h-12 rounded-none bg-white px-7 text-foreground hover:bg-primary hover:text-white"
-            >
-              <Link href="/contact">
-                Contact Exmedco
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
-          </div>
-        </section>
+        <ContactForm />
       </main>
       <Footer />
     </>

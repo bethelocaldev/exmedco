@@ -11,6 +11,7 @@ import {
 import Accreditation from "@/components/accreditation"
 import { Header, Footer } from "@/components/layout"
 import { Button } from "@/components/ui/button"
+import { ContactForm } from "@/components/contact-form"
 import { aboutContent, accreditations, companyInfo, statistics } from "@/data/site-data"
 
 const modelCards = [
@@ -188,24 +189,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="border-t border-border bg-foreground py-16 text-white sm:py-20">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
-            <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-                Partnership Ready
-              </p>
-              <h2 className="mt-4 max-w-3xl font-heading text-3xl font-extrabold tracking-normal sm:text-4xl">
-                Enter complex pharmaceutical markets with a single accountable partner.
-              </h2>
-            </div>
-            <Button asChild className="h-12 rounded-none bg-white px-7 text-foreground hover:bg-primary hover:text-white">
-              <Link href="/contact">
-                Contact Exmedco
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
-          </div>
-        </section>
+        <ContactForm />
 
         <section className="bg-white py-8">
           <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 md:grid-cols-3 lg:px-8">

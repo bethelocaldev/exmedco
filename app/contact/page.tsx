@@ -10,6 +10,7 @@ import {
 } from "lucide-react"
 import { Header, Footer } from "@/components/layout"
 import { Button } from "@/components/ui/button"
+import { ContactForm } from "@/components/contact-form"
 import { contactInfo } from "@/data/site-data"
 
 const contactCards = [
@@ -118,30 +119,7 @@ export default function ContactPage() {
         </section>
 
 
-        <section className="bg-foreground py-16 text-white sm:py-20">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[1fr_auto] lg:items-center lg:px-8">
-            <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-                Direct Contact
-              </p>
-              <h2 className="mt-4 max-w-3xl font-heading text-3xl font-extrabold tracking-normal sm:text-4xl">
-                Reach the Exmedco team for distribution and market access partnerships.
-              </h2>
-            </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Button asChild className="h-12 rounded-none bg-white px-7 text-foreground hover:bg-primary hover:text-white">
-                <Link href={`mailto:${contactInfo.email}`}>
-                  {contactInfo.email}
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="h-12 rounded-none border-white bg-transparent px-7 text-white hover:bg-white hover:text-foreground">
-                <Link href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}>
-                  {contactInfo.phone}
-                </Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+        <ContactForm />
       </main>
       <Footer />
     </>
