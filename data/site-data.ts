@@ -77,7 +77,7 @@ export const services = [
     shortDescription:
       "Structured access to modern trade chains, pharmacy retailers, and digital commerce platforms across high-growth markets.",
     description:
-      "Exmedco enables pharmaceutical and wellness manufacturers to enter and scale across retail environments that matter. Through established relationships with leading modern trade operators, pharmacy chains, and e-commerce marketplaces, we ensure consistent visibility, compliant shelf placement, and sustained consumer availability.",
+      "Exmedco enables pharmaceutical and wellness manufacturers to access the retail environments that drive consumer availability in high-growth markets. Through established partnerships with modern trade operators, pharmacy chains, and digital commerce platforms, we deliver consistent shelf placement, maximum visibility, and compliant distribution across APAC, Africa, and the Middle East.",
     icon: "Store",
     accent: "#1A56DB",
     features: [
@@ -91,6 +91,19 @@ export const services = [
       { name: "Pharmacy Chains", description: "Guardian, Watsons, Priceline" },
       { name: "Specialty Retail", description: "Health, Wellness, Beauty" },
       { name: "E-Commerce", description: "Lazada, Shopee, Tmall" },
+    ],
+    detailedChannels: [
+      { name: "Modern Trade", description: "Structured placement in supermarkets and hypermarkets across high-footfall modern trade environments in key cities and regions." },
+      { name: "Pharmacy Chains & Health Retailers", description: "Direct distribution through established pharmacy chains and specialist health retailers, managed by in-country teams." },
+      { name: "Specialty Wellness & Nutraceutical Stores", description: "Targeted access to wellness, nutraceutical, and health-focused retail formats across multiple markets." },
+      { name: "E-commerce & Digital Platforms", description: "Full activation on leading marketplace and DTC platforms across APAC — managing listings, logistics, and digital shelf presence." },
+    ],
+    outcomes: [
+      "Established relationships with leading modern trade operators and pharmacy chains across 12+ markets",
+      "Localised in-country teams ensuring compliant and commercially relevant shelf placement",
+      "Integrated physical and digital channel strategy for maximum brand coverage",
+      "Proven track record with 500+ active outlets across high-growth markets",
+      "End-to-end retailer account management from initial negotiation through ongoing replenishment",
     ],
     stats: {
       label: "Active Retail Outlets",
@@ -106,13 +119,25 @@ export const services = [
     shortDescription:
       "Guaranteed product availability at licensed pharmacies and regulated wellness outlets, fully compliant with local dispensing frameworks.",
     description:
-      "Our dispensing network provides manufacturers with structured, compliant product placement across both chain and independent pharmacy formats. Every dispensing point is managed within the applicable regulatory framework.",
+      "Exmedco's dispensing network provides manufacturers with structured, compliant product placement across both chain and independent pharmacy formats. Every dispensing point is operated within the applicable local regulatory framework, ensuring controlled documentation, product integrity, and consistent consumer availability across all markets.",
     icon: "Pill",
     accent: "#0F7B55",
     features: [
       "Licensed Chain & Independent Pharmacies",
       "OTC and Wellness Product Placement",
       "Regulatory Documentation & Compliance Monitoring",
+    ],
+    detailedChannels: [
+      { name: "Licensed Chain & Independent Pharmacies", description: "Distribution through fully licensed, regulated pharmacy outlets — both national chains and community-based independents." },
+      { name: "OTC Product Placement", description: "Efficient over-the-counter product placement ensuring consistent availability, compliant labelling, and sustained visibility." },
+      { name: "Wellness & Health Store Distribution", description: "Targeted reach to wellness, nutraceutical, and health-focused retail dispensing formats." },
+    ],
+    outcomes: [
+      "Partnerships spanning both chain and independent licensed pharmacy formats",
+      "Strict adherence to local regulatory and dispensing compliance frameworks in every market",
+      "Consistent OTC and wellness product availability across 1,000+ managed dispensing points",
+      "Dedicated in-country teams managing pharmacy relationships and compliance documentation",
+      "Transparent stock reporting and replenishment tracking across all dispensing locations",
     ],
     compliance:
       "All dispensing operations strictly follow local regulatory frameworks.",
@@ -130,7 +155,7 @@ export const services = [
     shortDescription:
       "Structured prescription channel access across hospitals, clinics, and specialist networks.",
     description:
-      "Exmedco provides pharmaceutical manufacturers with a disciplined, end-to-end prescription channel strategy across hospital procurement, GP networks, specialist outreach, and medical representative teams.",
+      "Exmedco provides a structured, end-to-end prescription channel strategy — connecting pharmaceutical manufacturers with hospital procurement teams, general practitioners, community clinics, and specialist networks across each market. Our in-country teams combine regulatory expertise with established healthcare professional relationships to ensure effective brand penetration and sustained clinical engagement.",
     icon: "Stethoscope",
     accent: "#1A56DB",
     features: [
@@ -138,6 +163,19 @@ export const services = [
       "GP & Community Clinic Networks",
       "Specialist Outreach & KOL Engagement",
       "Medical Representative Deployment",
+    ],
+    detailedChannels: [
+      { name: "Hospital Procurement", description: "Expert navigation of public and private hospital procurement processes, including formulary listing support, with in-country teams embedded in each market." },
+      { name: "GP & Community Clinic Networks", description: "Structured access to general practitioners and community clinic networks, delivering consistent brand messaging and product availability." },
+      { name: "Specialist Outreach", description: "Targeted engagement programmes connecting your brand with key opinion leaders and specialist clinicians in relevant therapy areas." },
+      { name: "Medical Representative Deployment", description: "On-the-ground MR teams providing sustained brand presence and HCP engagement across all active markets." },
+    ],
+    outcomes: [
+      "Structured prescription channel strategy tailored to the regulatory and clinical landscape of each market",
+      "100% compliance with local medical, dispensing, and promotional regulatory standards",
+      "In-market clinical expertise spanning 12+ countries across Asia, Africa, and the Middle East",
+      "Direct access to hospital formulary listing and procurement processes",
+      "Ongoing HCP engagement, medical education support, and clinical literature management",
     ],
     compliance: "100% compliance with local medical and regulatory standards",
     stats: {
@@ -154,7 +192,7 @@ export const services = [
     shortDescription:
       "End-to-end pharmaceutical logistics from strategic hub warehousing through last-mile delivery.",
     description:
-      "Our supply chain infrastructure is purpose-built for regulated pharmaceutical products, with hub warehousing, cold chain requirements, real-time shipment visibility, and last-mile delivery.",
+      "Exmedco's logistics infrastructure is built specifically for regulated pharmaceutical products. We operate strategic hub warehousing in Singapore and Hong Kong, manage end-to-end cold chain requirements, and deliver real-time supply chain visibility from origin to last-mile delivery — ensuring product integrity and on-time availability across 12+ countries.",
     icon: "Truck",
     accent: "#3D5166",
     features: [
@@ -163,6 +201,21 @@ export const services = [
       "Real-Time Track & Trace",
       "Integrated Order Management System (OMS)",
       "Last-Mile Delivery Across 12+ Countries",
+    ],
+    detailedChannels: [
+      { name: "Hub Warehousing", description: "Purpose-built pharmaceutical-grade warehouse facilities in Singapore and Hong Kong — positioned for rapid regional dispatch across APAC, the Middle East, and Africa." },
+      { name: "Cold Chain Logistics", description: "End-to-end temperature-controlled storage and transport, ensuring full product integrity from origin warehouse to final destination." },
+      { name: "Real-Time Track & Trace", description: "Live, system-driven visibility into shipment status, location, and condition across every leg of the supply chain." },
+      { name: "Order Management System (OMS)", description: "Integrated platform enabling seamless order processing, inventory management, demand forecasting, and ERP connectivity." },
+      { name: "Last-Mile Delivery", description: "Reliable final-mile distribution across 12+ countries — reaching pharmacies, hospitals, clinics, and retail outlets on schedule." },
+    ],
+    outcomes: [
+      "Scalable, GDP-compliant supply chain infrastructure built for regulated pharmaceutical products",
+      "Singapore and Hong Kong hub positioning enabling rapid, cost-efficient regional distribution",
+      "Fully temperature-controlled cold chain from warehouse to end delivery point",
+      "Real-time shipment visibility reducing exposure to loss, delay, and planning risk",
+      "Flexible OMS integration with existing manufacturer ERP and demand planning systems",
+      "Proven last-mile delivery networks across 12+ high-growth markets",
     ],
     processFlow: [
       { step: "Inbound", description: "Procurement & Quality Inspection" },

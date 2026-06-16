@@ -1,13 +1,9 @@
-import { Header, Footer } from "@/components/layout"
+import type { Metadata } from "next"
+import ServiceDetailLayout from "@/components/service-detail-layout"
+import { getServiceMetadata } from "@/data/seo-metadata"
+
+export const metadata: Metadata = getServiceMetadata("logistics-supply-chain")
 
 export default function LogisticsSupplyChainPage() {
-  return (
-    <>
-      <Header />
-      <main className="min-h-screen py-20 flex items-center justify-center bg-background">
-        <h1 className="text-4xl font-bold font-serif text-foreground">Logistics & Supply Chain page</h1>
-      </main>
-      <Footer />
-    </>
-  )
+  return <ServiceDetailLayout serviceId="logistics-supply-chain" />
 }
