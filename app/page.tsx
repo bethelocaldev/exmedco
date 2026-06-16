@@ -51,24 +51,31 @@ export default function HomePage() {
     <>
       <Header />
       <main className="bg-background pt-20">
-        <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-sky-100 via-white to-teal-50">
-          <div className="pointer-events-none absolute -left-10 top-20 h-52 w-52 rounded-full bg-sky-300/75 sm:left-10 sm:h-72 sm:w-72" />
-          <div className="pointer-events-none absolute left-[42%] top-20 h-32 w-32 rounded-full bg-emerald-300/80 sm:h-44 sm:w-44" />
-          <div className="pointer-events-none absolute -bottom-8 left-8 h-40 w-40 rounded-full bg-teal-300/80 sm:left-24 sm:h-56 sm:w-56" />
-          <div className="pointer-events-none absolute bottom-24 left-[34%] h-24 w-24 rounded-full bg-blue-300/85 sm:h-32 sm:w-32" />
-          <div className="pointer-events-none absolute right-[48%] top-[52%] h-16 w-16 rounded-full bg-primary/20 sm:h-24 sm:w-24" />
-          <div className="container grid min-h-[calc(100vh-5rem)] grid-cols-1 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
-            <div className="relative z-10 flex flex-col justify-center py-14 lg:col-span-6 lg:py-20 lg:pr-12">
-              <div className="mb-6 h-px w-24 bg-accent" />
-              <p className="eyebrow">{slide.eyebrow}</p>
-              <h1 className="mt-5 display-title max-w-3xl">
+        <section className="relative overflow-hidden border-b border-border bg-[radial-gradient(circle_at_12%_18%,rgba(14,165,233,0.28),transparent_30%),radial-gradient(circle_at_80%_12%,rgba(16,185,129,0.2),transparent_28%),linear-gradient(135deg,#eff9ff_0%,#ffffff_48%,#e9fbf7_100%)]">
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(10,22,40,0.055)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,22,40,0.045)_1px,transparent_1px)] bg-[size:48px_48px]" />
+          <div className="pointer-events-none absolute -left-12 top-16 h-72 w-72 rounded-full bg-sky-300/70" />
+          <div className="pointer-events-none absolute left-[38%] top-24 h-44 w-44 rounded-full bg-emerald-300/70" />
+          <div className="pointer-events-none absolute -bottom-16 left-16 h-64 w-64 rounded-full bg-teal-300/70" />
+          <div className="pointer-events-none absolute right-8 top-28 h-56 w-56 rounded-full bg-blue-200/70" />
+          <div className="pointer-events-none absolute right-[34%] bottom-20 h-28 w-28 rounded-full bg-primary/15" />
+          <div className="container relative z-10 grid min-h-[calc(100vh-5rem)] grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:gap-12 lg:px-8">
+            <div className="flex flex-col justify-center py-14 lg:col-span-6 lg:py-20 lg:pr-6">
+              <div className="mb-6 inline-flex w-fit items-center gap-2 border border-sky-200 bg-white/80 px-3 py-2 shadow-[0_12px_30px_rgba(14,165,233,0.1)] backdrop-blur-md">
+                <span className="flex size-7 items-center justify-center bg-primary text-white">
+                  <Pill className="size-4" />
+                </span>
+                <span className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-primary">
+                  {slide.eyebrow}
+                </span>
+              </div>
+              <h1 className="display-title max-w-3xl text-primary">
                 {slide.title}
               </h1>
-              <p className="body-copy mt-6 max-w-2xl">
+              <p className="body-copy mt-6 max-w-2xl text-slate-700">
                 {slide.description}
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button asChild className="h-12 rounded-none bg-primary border-2 border-primary px-6 text-white hover:bg-accent hover:border-accent transition-all duration-200">
+                <Button asChild className="h-12 rounded-none border-2 border-primary bg-primary px-6 text-white shadow-[0_14px_28px_rgba(10,22,40,0.18)] transition-all duration-200 hover:border-accent hover:bg-accent">
                   <Link href="/contact">
                     Discuss Market Access
                     <ArrowRight className="size-4" />
@@ -78,53 +85,104 @@ export default function HomePage() {
                   <Link href="/services">View Services</Link>
                 </Button>
               </div>
-              <div className="mt-10 border-l-2 border-accent pl-4">
-                <p className="font-mono text-xs font-semibold uppercase tracking-[0.16em] text-accent">
-                  Active capability
-                </p>
-                <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  {slide.serviceDetail}
-                </p>
+              <div className="mt-9 grid grid-cols-2 gap-px border border-sky-200 bg-sky-200/80 sm:grid-cols-4">
+                {homeStats.map((stat) => (
+                  <div key={stat.label} className="bg-white/88 p-4 backdrop-blur-md">
+                    <p className="font-mono text-2xl font-semibold text-primary">
+                      {stat.value}
+                    </p>
+                    <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                {[
+                  [ShieldCheck, "Regulated Market Access"],
+                  [Hospital, "Clinical Channel Reach"],
+                  [Truck, "Pharma-Grade Logistics"],
+                ].map(([Icon, text]) => {
+                  const TrustIcon = Icon as typeof ShieldCheck
+
+                  return (
+                    <div key={text as string} className="flex items-center gap-2 border border-sky-200 bg-white/72 px-3 py-3 text-sm font-semibold text-primary backdrop-blur-md">
+                      <TrustIcon className="size-4 text-accent" />
+                      {text as string}
+                    </div>
+                  )
+                })}
               </div>
             </div>
 
-            <div className="relative min-h-[420px] overflow-hidden border-t border-border lg:col-span-6 lg:border-l lg:border-t-0">
-              {heroSlides.map((item, index) => (
-                <img
-                  key={item.image}
-                  src={item.image}
-                  alt=""
-                  className={`absolute inset-0 size-full object-cover transition-opacity duration-700 ${
-                    index === activeSlide ? "opacity-100" : "opacity-0"
-                  }`}
-                />
-              ))}
-              <div className="absolute inset-0 bg-[#0A1628]/38" />
-              {/* <div className="absolute inset-x-6 bottom-6 border border-white/25 bg-white/92 p-5 backdrop-blur-sm sm:inset-x-8 sm:bottom-8">
-                <div className="grid grid-cols-3 gap-4">
-                  {["Retail", "Pharmacy", "Logistics"].map((item) => (
-                    <div key={item}>
-                      <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-primary">
-                        {item}
+            <div className="relative min-h-[520px] pb-12 lg:col-span-6 lg:py-20">
+              <div className="absolute left-6 top-10 h-28 w-28 border border-sky-200 bg-white/55 backdrop-blur-md" />
+              <div className="absolute bottom-20 right-2 h-24 w-24 border border-teal-200 bg-teal-100/80" />
+              <div className="relative ml-auto h-full max-w-xl">
+                <div className="absolute -left-4 top-12 z-20 hidden border border-sky-200 bg-white/90 p-4 shadow-[0_18px_45px_rgba(10,22,40,0.12)] backdrop-blur-md sm:block">
+                  <p className="font-mono text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-accent">
+                    Active capability
+                  </p>
+                  <p className="mt-2 max-w-[220px] text-sm font-semibold leading-6 text-primary">
+                    {slide.serviceDetail}
+                  </p>
+                </div>
+                <div className="absolute -right-3 bottom-16 z-20 border border-emerald-200 bg-white/92 p-4 shadow-[0_18px_45px_rgba(10,22,40,0.12)] backdrop-blur-md sm:right-4">
+                  <div className="flex items-center gap-3">
+                    <span className="flex size-11 items-center justify-center bg-emerald-50 text-emerald-700">
+                      <CheckCircle2 className="size-6" />
+                    </span>
+                    <div>
+                      <p className="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-emerald-700">
+                        Compliance Ready
                       </p>
-                      <div className="mt-3 h-1 bg-secondary">
-                        <div className="h-full w-2/3 bg-accent" />
+                      <p className="mt-1 font-heading text-xl font-bold text-primary">
+                        99.9%
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="relative h-full min-h-[520px] overflow-hidden border border-sky-200 bg-white/70 p-3 shadow-[0_30px_80px_rgba(10,22,40,0.18)] backdrop-blur-md">
+                  <div className="relative h-full min-h-[496px] overflow-hidden bg-primary">
+                    {heroSlides.map((item, index) => (
+                      <img
+                        key={item.image}
+                        src={item.image}
+                        alt=""
+                        className={`absolute inset-0 size-full object-cover transition-opacity duration-700 ${
+                          index === activeSlide ? "opacity-100" : "opacity-0"
+                        }`}
+                      />
+                    ))}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-primary/80 via-primary/30 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 border-t border-white/20 bg-white/92 p-5 backdrop-blur-md">
+                      <div className="grid grid-cols-3 gap-3">
+                        {["Retail", "Pharmacy", "Logistics"].map((item) => (
+                          <div key={item} className="border border-sky-100 bg-sky-50/70 p-3">
+                            <p className="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-primary">
+                              {item}
+                            </p>
+                            <div className="mt-3 h-1 bg-white">
+                              <div className="h-full w-2/3 bg-accent" />
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  ))}
+                    <div className="absolute right-5 top-5 flex gap-2">
+                      {heroSlides.map((item, index) => (
+                        <button
+                          key={item.title}
+                          aria-label={`Show hero slide ${index + 1}`}
+                          onClick={() => setActiveSlide(index)}
+                          className={`h-2.5 w-8 border border-white transition ${
+                            index === activeSlide ? "bg-white" : "bg-white/20"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div> */}
-              <div className="absolute right-6 top-6 flex gap-2">
-                {heroSlides.map((item, index) => (
-                  <button
-                    key={item.title}
-                    aria-label={`Show hero slide ${index + 1}`}
-                    onClick={() => setActiveSlide(index)}
-                    className={`h-2.5 w-8 border border-white transition ${
-                      index === activeSlide ? "bg-white" : "bg-white/20"
-                    }`}
-                  />
-                ))}
               </div>
             </div>
           </div>
