@@ -1,7 +1,9 @@
 import { MetadataRoute } from 'next'
 
+import { siteConfig } from '@/data/site-data'
+
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://www.fhyglobal.com'
+  const baseUrl = siteConfig.url
 
   return {
     rules: {

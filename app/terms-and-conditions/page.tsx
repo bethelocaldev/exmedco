@@ -3,9 +3,9 @@ import { Header, Footer } from "@/components/layout"
 import { siteConfig } from "@/data/site-data"
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions | FHY Gloexpo",
+  title: "Terms and Conditions | Exmedco",
   description: `Terms and Conditions for ${siteConfig.name}. Read our terms of service and usage policies.`,
-  alternates: { canonical: "https://www.fhyglobal.com/terms-and-conditions" },
+  alternates: { canonical: "https://www.exmedco.com/terms-and-conditions" },
   robots: { index: false, follow: true },
 }
 
@@ -25,7 +25,7 @@ export default function TermsPage() {
             <div className="max-w-3xl mx-auto border border-sky-200 bg-white/90 p-6 shadow-[0_24px_60px_rgba(14,165,233,0.12)] prose prose-lg prose-headings:font-serif prose-headings:text-primary prose-p:text-muted-foreground prose-a:text-primary sm:p-8">
               <h2>Agreement to Terms</h2>
               <p>
-                By accessing or using the FHY Gloexpo website and services, you agree to be bound
+                By accessing or using the Exmedco website and services, you agree to be bound
                 by these Terms and Conditions. If you disagree with any part of these terms,
                 you may not access our website or use our services.
               </p>
@@ -40,13 +40,13 @@ export default function TermsPage() {
               <h2>Intellectual Property</h2>
               <p>
                 All content on this website, including text, graphics, logos, and images, is the
-                property of FHY Gloexpo LLP and is protected by intellectual property laws.
+                property of Exmedco and is protected by intellectual property laws.
                 You may not reproduce, distribute, or create derivative works without our written consent.
               </p>
 
               <h2>Limitation of Liability</h2>
               <p>
-                FHY Gloexpo LLP shall not be liable for any indirect, incidental, special,
+                Exmedco shall not be liable for any indirect, incidental, special,
                 consequential, or punitive damages resulting from your use of or inability to
                 use our services or website.
               </p>
@@ -60,8 +60,8 @@ export default function TermsPage() {
               <h2>Contact Us</h2>
               <p>
                 If you have questions about these Terms, please contact us at:{" "}
-                <a href="mailto:info@fhyglobal.com">info@fhyglobal.com</a> or{" "}
-                <a href="mailto:director@fhyglobal.com">director@fhyglobal.com</a>
+                <a href="mailto:info@exmedco.com">info@exmedco.com</a> or{" "}
+                <a href="mailto:director@exmedco.com">director@exmedco.com</a>
               </p>
             </div>
           </div>

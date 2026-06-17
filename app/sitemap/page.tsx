@@ -5,9 +5,9 @@ import { ArrowRight } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Sitemap | FHY Gloexpo",
-  description: "Browse all FHY Gloexpo pages and navigate to key company sections.",
-  alternates: { canonical: "https://www.fhyglobal.com/sitemap" },
+  title: "Sitemap | Exmedco",
+  description: "Browse all Exmedco pages and navigate to key company sections.",
+  alternates: { canonical: "https://www.exmedco.com/sitemap" },
   robots: { index: false, follow: true },
 }
 

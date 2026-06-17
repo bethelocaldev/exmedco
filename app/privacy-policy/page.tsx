@@ -3,9 +3,9 @@ import { Header, Footer } from "@/components/layout"
 import { siteConfig } from "@/data/site-data"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | FHY Gloexpo",
+  title: "Privacy Policy | Exmedco",
   description: `Privacy Policy for ${siteConfig.name}. Learn how we collect, use, and protect your personal information.`,
-  alternates: { canonical: "https://www.fhyglobal.com/privacy-policy" },
+  alternates: { canonical: "https://www.exmedco.com/privacy-policy" },
   robots: { index: false, follow: true },
 }
 
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
             <div className="max-w-3xl mx-auto border border-sky-200 bg-white/90 p-6 shadow-[0_24px_60px_rgba(14,165,233,0.12)] prose prose-lg prose-headings:font-serif prose-headings:text-primary prose-p:text-muted-foreground prose-a:text-primary sm:p-8">
               <h2>Introduction</h2>
               <p>
-                FHY Gloexpo LLP (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
+                Exmedco (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your privacy.
                 This Privacy Policy explains how we collect, use, disclose, and safeguard your
                 information when you visit our website or engage with our services.
               </p>
@@ -63,8 +63,8 @@ export default function PrivacyPolicyPage() {
               <h2>Contact Us</h2>
               <p>
                 If you have questions about this Privacy Policy, please contact us at:{" "}
-                <a href="mailto:info@fhyglobal.com">info@fhyglobal.com</a> or{" "}
-                <a href="mailto:director@fhyglobal.com">director@fhyglobal.com</a>
+                <a href="mailto:info@exmedco.com">info@exmedco.com</a> or{" "}
+                <a href="mailto:director@exmedco.com">director@exmedco.com</a>
               </p>
             </div>
           </div>

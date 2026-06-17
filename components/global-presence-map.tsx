@@ -197,7 +197,7 @@ export default function GlobalPresenceMap() {
             <div className="absolute bottom-4 left-4 flex items-center gap-3 z-20">
               <div className="flex items-center gap-2 bg-black/50 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5">
                 <span className="w-3 h-3 rounded-full bg-primary" />
-                <span className="text-white/70 text-xs">FHY Presence</span>
+                <span className="text-white/70 text-xs">Exmedco Presence</span>
               </div>
               <div className="flex items-center gap-2 bg-black/50 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5">
                 <span className="w-3 h-3 rounded-full bg-[#1e2a3a]" />
@@ -238,7 +238,7 @@ export default function GlobalPresenceMap() {
                         className="object-contain"
                       />
                     </span>
-                    <span className="text-white/70 text-xs font-medium">FHY presence market</span>
+                    <span className="text-white/70 text-xs font-medium">Exmedco presence market</span>
                   </div>
                 </div>
               )

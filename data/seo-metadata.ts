@@ -26,9 +26,9 @@ const baseMetadata: Partial<Metadata> = {
 // Page-specific metadata
 export const homeMetadata: Metadata = {
   ...baseMetadata,
-  title: "FHY Gloexpo | Pharma Distribution & Logistics Across APAC",
+  title: "Exmedco | Pharma Distribution & Logistics Across APAC",
   description:
-    "FHY Gloexpo is a leading pharma distribution company providing retail, prescription, dispensing, and logistics solutions across Asia, Africa, and the Middle East. Expand your pharmaceutical brand with compliant, end-to-end market access.",
+    "Exmedco is a leading pharma distribution company providing retail, prescription, dispensing, and logistics solutions across Asia, Africa, and the Middle East. Expand your pharmaceutical brand with compliant, end-to-end market access.",
   keywords: [
     "pharma distribution APAC",
     "pharmaceutical logistics Asia",
@@ -44,9 +44,9 @@ export const homeMetadata: Metadata = {
     "APAC pharmaceutical market",
   ],
   openGraph: {
-    title: "FHY Gloexpo | Pharma Distribution Across APAC",
+    title: "Exmedco | Pharma Distribution Across APAC",
     description:
-      "End-to-end pharma distribution across retail, prescription, and logistics channels. Expand your reach across APAC with FHY Gloexpo.",
+      "End-to-end pharma distribution across retail, prescription, and logistics channels. Expand your reach across APAC with Exmedco.",
     url: siteConfig.url,
     siteName: siteConfig.name,
     images: [
@@ -54,7 +54,7 @@ export const homeMetadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "FHY Gloexpo Pharma Distribution",
+        alt: "Exmedco Pharma Distribution",
       },
     ],
     locale: "en_US",
@@ -62,7 +62,7 @@ export const homeMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "FHY Gloexpo | Pharma Distribution & Logistics",
+    title: "Exmedco | Pharma Distribution & Logistics",
     description:
       "Expand your pharma brand across APAC with compliant distribution, logistics, and market access solutions.",
     images: ["/images/og-image.jpg"],
@@ -74,11 +74,11 @@ export const homeMetadata: Metadata = {
 
 export const aboutMetadata: Metadata = {
   ...baseMetadata,
-  title: "About Us | FHY Gloexpo - Global Pharma Distribution Partner",
+  title: "About Us | Exmedco - Global Pharma Distribution Partner",
   description:
-    "Learn about FHY Gloexpo LLP, a global sourcing and distribution company enabling manufacturers to expand across Asia, Africa, and the Middle East. Strategic partners in growth with 30+ markets.",
+    "Learn about Exmedco, a global sourcing and distribution company enabling manufacturers to expand across Asia, Africa, and the Middle East. Strategic partners in growth with 30+ markets.",
   keywords: [
-    "about FHY Gloexpo",
+    "about Exmedco",
     "pharma distribution company",
     "global sourcing partner",
     "APAC distribution partner",
@@ -86,9 +86,9 @@ export const aboutMetadata: Metadata = {
     "B2C brand building",
   ],
   openGraph: {
-    title: "About FHY Gloexpo | Global Pharma Distribution Partner",
+    title: "About Exmedco | Global Pharma Distribution Partner",
     description:
-      "Discover how FHY Gloexpo enables manufacturers to expand across high-growth markets in Asia, Africa, and the Middle East.",
+      "Discover how Exmedco enables manufacturers to expand across high-growth markets in Asia, Africa, and the Middle East.",
     url: `${siteConfig.url}/about`,
     siteName: siteConfig.name,
     images: [
@@ -96,7 +96,7 @@ export const aboutMetadata: Metadata = {
         url: "/images/og-about.jpg",
         width: 1200,
         height: 630,
-        alt: "About FHY Gloexpo",
+        alt: "About Exmedco",
       },
     ],
     locale: "en_US",
@@ -104,7 +104,7 @@ export const aboutMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About FHY Gloexpo | Global Pharma Distribution",
+    title: "About Exmedco | Global Pharma Distribution",
     description:
       "Strategic partners in growth with 30+ markets across Asia, Africa, and the Middle East.",
     images: ["/images/og-about.jpg"],
@@ -116,20 +116,20 @@ export const aboutMetadata: Metadata = {
 
 export const contactMetadata: Metadata = {
   ...baseMetadata,
-  title: "Contact Us | FHY Gloexpo - Get in Touch",
+  title: "Contact Us | Exmedco - Get in Touch",
   description:
-    "Contact FHY Gloexpo for pharma distribution partnerships across APAC. Reach us at our Mumbai headquarters for retail, dispensing, prescription, and logistics solutions.",
+    "Contact Exmedco for pharma distribution partnerships across APAC. Reach us at our Mumbai headquarters for retail, dispensing, prescription, and logistics solutions.",
   keywords: [
-    "contact FHY Gloexpo",
+    "contact Exmedco",
     "pharma distribution contact",
     "APAC distribution partner",
     "pharmaceutical logistics contact",
     "Mumbai pharma company",
   ],
   openGraph: {
-    title: "Contact FHY Gloexpo | Pharma Distribution Partner",
+    title: "Contact Exmedco | Pharma Distribution Partner",
     description:
-      "Get in touch with FHY Gloexpo for pharma distribution partnerships across Asia, Africa, and the Middle East.",
+      "Get in touch with Exmedco for pharma distribution partnerships across Asia, Africa, and the Middle East.",
     url: `${siteConfig.url}/contact`,
     siteName: siteConfig.name,
     images: [
@@ -137,7 +137,7 @@ export const contactMetadata: Metadata = {
         url: "/images/og-contact.jpg",
         width: 1200,
         height: 630,
-        alt: "Contact FHY Gloexpo",
+        alt: "Contact Exmedco",
       },
     ],
     locale: "en_US",
@@ -153,7 +153,7 @@ export const servicesMetadata: Record<string, Metadata> = {
   "retail-distribution": {
     ...baseMetadata,
     title:
-      "Retail Distribution Services | FHY Gloexpo - APAC Pharma Distribution",
+      "Retail Distribution Services | Exmedco - APAC Pharma Distribution",
     description:
       "Scale your pharma brand through modern retail networks across APAC. Partner with top pharmacy chains, supermarkets, and e-commerce platforms. 500+ retail outlets in 12+ countries.",
     keywords: [
@@ -168,7 +168,7 @@ export const servicesMetadata: Record<string, Metadata> = {
       "Shopee health products",
     ],
     openGraph: {
-      title: "Retail Distribution | FHY Gloexpo",
+      title: "Retail Distribution | Exmedco",
       description:
         "Access high-growth retail environments across APAC through modern trade chains, pharmacy retailers, and e-commerce platforms.",
       url: `${siteConfig.url}/services/retail-distribution`,
@@ -191,7 +191,7 @@ export const servicesMetadata: Record<string, Metadata> = {
   "dispensing-network": {
     ...baseMetadata,
     title:
-      "Dispensing Network | FHY Gloexpo - Licensed Pharmacy Distribution",
+      "Dispensing Network | Exmedco - Licensed Pharmacy Distribution",
     description:
       "Reliable access through licensed pharmacy channels. OTC product distribution and wellness store placement across 1,000+ dispensing points in APAC with full regulatory compliance.",
     keywords: [
@@ -203,7 +203,7 @@ export const servicesMetadata: Record<string, Metadata> = {
       "pharma regulatory compliance",
     ],
     openGraph: {
-      title: "Dispensing Network | FHY Gloexpo",
+      title: "Dispensing Network | Exmedco",
       description:
         "Ensure product availability through trusted, regulated pharmacy environments across APAC.",
       url: `${siteConfig.url}/services/dispensing-network`,
@@ -226,7 +226,7 @@ export const servicesMetadata: Record<string, Metadata> = {
   "prescription-channel": {
     ...baseMetadata,
     title:
-      "Prescription Channel | FHY Gloexpo - Hospital & Clinic Distribution",
+      "Prescription Channel | Exmedco - Hospital & Clinic Distribution",
     description:
       "Connect with healthcare professionals and institutional buyers. Hospital procurement, clinic networks, and medical representative engagement with 100% regulatory compliance.",
     keywords: [
@@ -239,7 +239,7 @@ export const servicesMetadata: Record<string, Metadata> = {
       "healthcare professional outreach",
     ],
     openGraph: {
-      title: "Prescription Channel | FHY Gloexpo",
+      title: "Prescription Channel | Exmedco",
       description:
         "Reach healthcare professionals and institutional buyers through structured prescription channels across APAC.",
       url: `${siteConfig.url}/services/prescription-channel`,
@@ -262,7 +262,7 @@ export const servicesMetadata: Record<string, Metadata> = {
   "logistics-supply-chain": {
     ...baseMetadata,
     title:
-      "Logistics & Supply Chain | FHY Gloexpo - Pharma Cold Chain Logistics",
+      "Logistics & Supply Chain | Exmedco - Pharma Cold Chain Logistics",
     description:
       "Seamless pharma distribution from source to shelf. Central warehousing in Singapore & Hong Kong, cold chain logistics, real-time tracking, and last-mile delivery across 12+ countries.",
     keywords: [
@@ -277,7 +277,7 @@ export const servicesMetadata: Record<string, Metadata> = {
       "track trace pharma",
     ],
     openGraph: {
-      title: "Logistics & Supply Chain | FHY Gloexpo",
+      title: "Logistics & Supply Chain | Exmedco",
       description:
         "End-to-end pharma logistics with cold chain capabilities, real-time tracking, and last-mile delivery across APAC.",
       url: `${siteConfig.url}/services/logistics-supply-chain`,

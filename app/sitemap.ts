@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { siteConfig } from '@/data/site-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.fhyglobal.com'
+  const baseUrl = siteConfig.url
 
   // Return an array of all the pages you want Google to index
   return [

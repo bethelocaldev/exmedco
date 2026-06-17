@@ -8,11 +8,15 @@ import {
   ShieldCheck,
   Target,
 } from "lucide-react"
+import type { Metadata } from "next"
+import { aboutMetadata } from "@/data/seo-metadata"
 import Accreditation from "@/components/accreditation"
 import { Header, Footer } from "@/components/layout"
 import { Button } from "@/components/ui/button"
 import { ContactForm } from "@/components/contact-form"
 import { aboutContent, accreditations, companyInfo, statistics } from "@/data/site-data"
+
+export const metadata: Metadata = aboutMetadata
 
 const modelCards = [
   {
